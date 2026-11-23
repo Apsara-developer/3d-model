@@ -1,0 +1,265 @@
+
+#aram-chat-launcher {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 68px;
+    height: 68px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#7451f5,#5031d6);
+    color: white;
+    font-size: 31px;
+    box-shadow: 0 8px 30px rgba(72,45,160,.35);
+    cursor: pointer;
+    z-index: 99998;
+    transition: .25s;
+}
+
+#aram-chat-launcher:hover {
+    transform: translateY(-5px) scale(1.04);
+}
+
+#aram-chat-launcher.aram-launcher-hidden {
+    display: none;
+}
+
+#aram-chat-panel {
+    position: fixed;
+    right: 28px;
+    bottom: 108px;
+    width: 365px;
+    max-width: calc(100vw - 30px);
+    height: 530px;
+    max-height: calc(100vh - 135px);
+    background: #fff;
+    border: 1px solid #eeeaf5;
+    border-radius: 20px;
+    box-shadow: 0 20px 70px rgba(20,12,50,.22);
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(.97);
+    transition: .25s ease;
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+#aram-chat-panel.aram-chat-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.aram-chat-header {
+    background: linear-gradient(120deg,#6243e8,#8160f8);
+    color: white;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.aram-chat-avatar {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.2);
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+}
+
+.aram-chat-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.aram-chat-heading strong {
+    font-size: 15px;
+}
+
+.aram-chat-heading small {
+    font-size: 11px;
+    color: #e7e0ff;
+}
+
+.aram-online-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #60e8a0;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.aram-chat-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.aram-chat-welcome {
+    padding: 19px;
+    background: #faf9ff;
+    border-bottom: 1px solid #eeeaf5;
+}
+
+.aram-chat-welcome h3 {
+    font-size: 17px;
+    color: #241b42;
+    margin-bottom: 8px;
+}
+
+.aram-chat-welcome p {
+    color: #777387;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.aram-quick-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 13px;
+}
+
+.aram-quick-questions button {
+    border: 1px solid #ded6fa;
+    border-radius: 20px;
+    background: white;
+    color: #6749e9;
+    padding: 8px 10px;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.aram-quick-questions button:hover {
+    background: #f0ebff;
+}
+
+.aram-chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #fff;
+    min-height: 0;
+}
+
+.aram-message {
+    display: flex;
+    margin-bottom: 12px;
+}
+
+.aram-user-message {
+    justify-content: flex-end;
+}
+
+.aram-bot-message {
+    justify-content: flex-start;
+}
+
+.aram-message-bubble {
+    max-width: 85%;
+    padding: 11px 14px;
+    border-radius: 14px;
+    font-size: 12px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.aram-user-message .aram-message-bubble {
+    background: #7050ef;
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.aram-bot-message .aram-message-bubble {
+    background: #f3f1fa;
+    color: #29243d;
+    border-bottom-left-radius: 4px;
+}
+
+.aram-typing {
+    color: #8068d8 !important;
+    font-style: italic;
+}
+
+.aram-chat-input-area {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px;
+    border-top: 1px solid #eeeaf5;
+    background: white;
+    flex-shrink: 0;
+}
+
+.aram-chat-input-area textarea {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #e9e5f0;
+    border-radius: 12px;
+    padding: 12px;
+    resize: none;
+    max-height: 90px;
+    outline: none;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.aram-chat-input-area textarea:focus {
+    border-color: #8160f8;
+}
+
+#aram-chat-send {
+    height: 41px;
+    width: 43px;
+    flex-shrink: 0;
+    background: #7050ef;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+#aram-chat-send:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.aram-chat-footer {
+    text-align: center;
+    font-size: 9px;
+    color: #9993a9;
+    padding: 8px;
+    background: #faf9fc;
+    flex-shrink: 0;
+}
+
+@media(max-width:480px) {
+    #aram-chat-launcher {
+        width: 58px;
+        height: 58px;
+        right: 17px;
+        bottom: 18px;
+    }
+
+    #aram-chat-panel {
+        right: 10px;
+        bottom: 87px;
+        width: calc(100vw - 20px);
+        height: min(560px, calc(100vh - 110px));
+        max-height: calc(100vh - 110px);
+    }
+}

@@ -1,0 +1,730 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aram Events — Workspace</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <style>
+        /* =================================
+           PRICING SECTION
+        ================================= */
+
+        .pricing-section {
+            margin: 55px 0;
+            scroll-margin-top: 30px;
+        }
+
+        .pricing-intro {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        .pricing-intro .eyebrow {
+            color: #7052ed;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .pricing-intro h2 {
+            font-size: clamp(27px, 4vw, 38px);
+            color: #19152d;
+            margin: 12px 0;
+        }
+
+        .pricing-intro p {
+            color: #777487;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+            align-items: stretch;
+        }
+
+        .pricing-card {
+            position: relative;
+            background: #fff;
+            border: 1px solid #e9e6f1;
+            border-radius: 18px;
+            padding: 25px 19px;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(55, 35, 110, .09);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #7655ef;
+            background: linear-gradient(180deg, #f7f4ff, #fff 45%);
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #7251ed;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 10px;
+            font-weight: 800;
+            white-space: nowrap;
+            letter-spacing: .5px;
+        }
+
+        .plan-name {
+            color: #252039;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .plan-description {
+            color: #858195;
+            font-size: 12px;
+            line-height: 1.6;
+            min-height: 39px;
+        }
+
+        .plan-price {
+            margin: 22px 0 5px;
+            color: #211b39;
+            font-size: 29px;
+            font-weight: 850;
+            letter-spacing: -1px;
+            white-space: nowrap;
+        }
+
+        .plan-period {
+            color: #8b8799;
+            font-size: 11px;
+            min-height: 18px;
+        }
+
+        .plan-divider {
+            border: 0;
+            border-top: 1px solid #eeebf4;
+            margin: 20px 0;
+        }
+
+        .plan-capacity {
+            background: #f5f2fc;
+            border-radius: 10px;
+            padding: 13px 10px;
+            margin-bottom: 20px;
+        }
+
+        .plan-capacity strong {
+            display: block;
+            font-size: 19px;
+            color: #6548dc;
+            margin-bottom: 4px;
+        }
+
+        .plan-capacity span {
+            color: #858095;
+            font-size: 11px;
+        }
+
+        .plan-action {
+            display: block;
+            margin-top: auto;
+            padding: 12px 9px;
+            text-align: center;
+            text-decoration: none;
+            background: #f0edfb;
+            color: #6748df;
+            border: 1px solid #e5defb;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 800;
+            transition: .2s;
+        }
+
+        .plan-action:hover {
+            background: #7050ed;
+            color: white;
+            border-color: #7050ed;
+        }
+
+        .featured .plan-action {
+            background: #7050ed;
+            color: white;
+            border-color: #7050ed;
+        }
+
+        .featured .plan-action:hover {
+            background: #5436cc;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 24px;
+            color: #888497;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .pricing-note strong {
+            color: #51466f;
+        }
+
+        .payment-notice {
+            margin-top: 18px;
+            background: #f6f4fc;
+            border: 1px solid #e9e4f7;
+            border-radius: 12px;
+            padding: 15px 18px;
+            color: #6f687f;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .payment-notice strong {
+            color: #5540bd;
+        }
+
+        .pricing-nav {
+            color: inherit;
+        }
+
+        @media(max-width: 1250px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media(max-width: 800px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media(max-width: 520px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card {
+                padding: 25px;
+            }
+
+            .pricing-intro {
+                text-align: left;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/experience-3d.css">
+</head>
+
+<body>
+
+<!-- =================================
+     SIDEBAR
+================================= -->
+
+<aside class="sidebar">
+
+    <a class="brand" href="index.html">
+        <span class="mark">A</span>
+        <span>ARAM <b>EVENTS</b></span>
+    </a>
+
+    <div class="workspace">WORKSPACE</div>
+
+    <nav>
+        <a class="active" href="index.html">
+            ▦ <span>Dashboard</span>
+        </a>
+
+        <a href="create-website.html">
+            ✦ <span>AI Website Generator</span>
+        </a>
+
+        <a href="create-website.html#poster">
+            ▧ <span>Generate from Poster</span>
+        </a>
+
+        <a href="template-library.html">
+            ▤ <span>Template Library</span>
+        </a>
+
+        <a href="#recentProjects">
+            ◷ <span>My Websites</span>
+        </a>
+
+        <a href="editor.html">
+            ⌘ <span>Website Editor</span>
+        </a>
+
+        <a href="#pricing" class="pricing-nav">
+            ₹ <span>Pricing & Plans</span>
+        </a>
+    </nav>
+
+    <div class="side-bottom">
+
+        <button data-logout class="logout-link" type="button">
+            ↪ Sign out
+        </button>
+
+        <div class="local">
+            <i></i>
+            <div>
+                <b>Local AI enabled</b>
+                <small>Ollama · qwen2.5-coder:3b</small>
+            </div>
+        </div>
+
+        <small>ARAM EVENTS · WEBSITE STUDIO</small>
+
+    </div>
+</aside>
+
+
+<!-- =================================
+     MAIN DASHBOARD
+================================= -->
+
+<main class="main">
+
+    <!-- TOP HEADER -->
+
+    <header class="top">
+
+        <div>
+            <span class="crumb">WORKSPACE / OVERVIEW</span>
+
+            <h1>Your creative workspace</h1>
+
+            <p>
+                Design, generate and manage event websites in one place.
+            </p>
+        </div>
+
+        <div class="top-actions">
+
+            <div class="account-chip">
+
+                <span id="accountAvatar">A</span>
+
+                <div>
+                    <b id="accountName">My account</b>
+                    <small id="accountEmail">Loading account...</small>
+                </div>
+
+            </div>
+
+            <a class="button" href="create-website.html">
+                ＋ Create a website
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ACCOUNT OVERVIEW -->
+
+    <section class="account-overview">
+
+        <div>
+
+            <span class="eyebrow">MY ACCOUNT</span>
+
+            <h2>Your websites, all in one place.</h2>
+
+            <p>
+                Every website you generate and save is linked
+                to your signed-in account.
+            </p>
+
+        </div>
+
+        <div class="account-stats">
+
+            <div>
+                <b id="projectCount">0</b>
+                <span>Total websites</span>
+            </div>
+
+            <div>
+                <b id="draftCount">0</b>
+                <span>Drafts</span>
+            </div>
+
+            <div>
+                <b id="publishedCount">0</b>
+                <span>Published</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         PRICING AND PAYMENT PLANS
+    ================================== -->
+
+    <section class="pricing-section" id="pricing">
+
+        <div class="pricing-intro">
+
+            <span class="eyebrow">SIMPLE AND FLEXIBLE PRICING</span>
+
+            <h2>Choose the right plan for your event.</h2>
+
+            <p>
+                From small gatherings to large-scale productions,
+                choose a plan based on your event attendance.
+            </p>
+
+        </div>
+
+
+        <div class="pricing-grid">
+
+            <!-- FREE PLAN -->
+
+            <article class="pricing-card">
+
+                <div class="plan-name">Free</div>
+
+                <p class="plan-description">
+                    Get started with your event website.
+                </p>
+
+                <div class="plan-price">₹0</div>
+
+                <div class="plan-period">Free plan</div>
+
+                <hr class="plan-divider">
+
+                <div class="plan-capacity">
+                    <strong>100</strong>
+                    <span>Maximum attendees</span>
+                </div>
+
+                <a
+                    class="plan-action"
+                    href="create-website.html?plan=free">
+                    Get started free →
+                </a>
+
+            </article>
+
+
+            <!-- ESSENTIAL PLAN -->
+
+            <article class="pricing-card">
+
+                <div class="plan-name">Essential</div>
+
+                <p class="plan-description">
+                    For small events and gatherings.
+                </p>
+
+                <div class="plan-price">₹1,999</div>
+
+                <div class="plan-period">Per event</div>
+
+                <hr class="plan-divider">
+
+                <div class="plan-capacity">
+                    <strong>250</strong>
+                    <span>Maximum attendees</span>
+                </div>
+
+                <a
+                    class="plan-action"
+                    href="create-website.html?plan=essential">
+                    Select Essential →
+                </a>
+
+            </article>
+
+
+            <!-- PROFESSIONAL PLAN -->
+
+            <article class="pricing-card featured">
+
+                <span class="popular-tag">POPULAR PLAN</span>
+
+                <div class="plan-name">Professional</div>
+
+                <p class="plan-description">
+                    For professional event organizers.
+                </p>
+
+                <div class="plan-price">₹4,999</div>
+
+                <div class="plan-period">Per event</div>
+
+                <hr class="plan-divider">
+
+                <div class="plan-capacity">
+                    <strong>1,000</strong>
+                    <span>Maximum attendees</span>
+                </div>
+
+                <a
+                    class="plan-action"
+                    href="create-website.html?plan=professional">
+                    Select Professional →
+                </a>
+
+            </article>
+
+
+            <!-- BUSINESS PLAN -->
+
+            <article class="pricing-card">
+
+                <div class="plan-name">Business</div>
+
+                <p class="plan-description">
+                    For larger events and business teams.
+                </p>
+
+                <div class="plan-price">₹12,999</div>
+
+                <div class="plan-period">Per event</div>
+
+                <hr class="plan-divider">
+
+                <div class="plan-capacity">
+                    <strong>5,000</strong>
+                    <span>Maximum attendees</span>
+                </div>
+
+                <a
+                    class="plan-action"
+                    href="create-website.html?plan=business">
+                    Select Business →
+                </a>
+
+            </article>
+
+
+            <!-- ENTERPRISE PLAN -->
+
+            <article class="pricing-card">
+
+                <div class="plan-name">Enterprise</div>
+
+                <p class="plan-description">
+                    For large-scale event productions.
+                </p>
+
+                <div class="plan-price" style="font-size:25px">
+                    Custom
+                </div>
+
+                <div class="plan-period">Custom pricing</div>
+
+                <hr class="plan-divider">
+
+                <div class="plan-capacity">
+                    <strong>Large scale</strong>
+                    <span>Custom event capacity</span>
+                </div>
+
+                <a
+                    class="plan-action"
+                    href="create-website.html?plan=enterprise">
+                    Select Enterprise →
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <p class="pricing-note">
+            <strong>All prices are in Indian Rupees (INR).</strong>
+            Essential, Professional and Business plans are priced per event.
+        </p>
+
+        <div class="payment-notice">
+            <strong>Payment information:</strong>
+            Plan prices are displayed here for selection.
+            Online payment checkout has not yet been connected.
+            Payment confirmation must be implemented through a verified
+            payment gateway before paid plans can be activated.
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         WELCOME SECTION
+    ================================== -->
+
+    <section class="welcome">
+
+        <div>
+
+            <span class="eyebrow">WELCOME TO ARAM EVENTS</span>
+
+            <h2>
+                Turn your next event into<br>
+                <em>an unforgettable experience.</em>
+            </h2>
+
+            <p>
+                Start with an idea, choose a design, or upload
+                your event poster. Your website workspace is ready.
+            </p>
+
+            <a class="light-button" href="create-website.html">
+                Start creating <b>→</b>
+            </a>
+
+        </div>
+
+        <div class="orb">
+
+            <div class="orb-card">
+                <span>✦</span>
+                <b>IDEA → DESIGN</b>
+                <small>Made with local AI</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================
+         GET STARTED
+    ================================== -->
+
+    <section class="section-head">
+
+        <div>
+
+            <span class="eyebrow">GET STARTED</span>
+
+            <h2>What would you like to create?</h2>
+
+        </div>
+
+    </section>
+
+
+    <section class="actions">
+
+        <a class="action poster" href="create-website.html#poster">
+
+            <span class="action-icon">▧</span>
+
+            <span class="tag">AI POWERED</span>
+
+            <h3>Generate from a poster</h3>
+
+            <p>
+                Upload a JPG, PNG or PDF event flyer.
+                Extract the details and turn it into a website.
+            </p>
+
+            <b>Upload poster <i>→</i></b>
+
+        </a>
+
+
+        <a class="action idea" href="create-website.html">
+
+            <span class="action-icon">✦</span>
+
+            <h3>Start with an idea</h3>
+
+            <p>
+                Describe the website you imagine and build
+                a custom event experience.
+            </p>
+
+            <b>Describe your idea <i>→</i></b>
+
+        </a>
+
+
+        <a class="action templates" href="template-library.html">
+
+            <span class="action-icon">▤</span>
+
+            <h3>Explore templates</h3>
+
+            <p>
+                Browse existing layouts and customize
+                a design in the visual editor.
+            </p>
+
+            <b>Browse designs <i>→</i></b>
+
+        </a>
+
+    </section>
+
+
+    <!-- =================================
+         RECENT PROJECTS
+    ================================== -->
+
+    <section class="section-head recent" id="recentProjects">
+
+        <div>
+
+            <span class="eyebrow">YOUR WORKSPACE</span>
+
+            <h2>Continue creating</h2>
+
+            <p>
+                Your generated websites and drafts are saved to your account.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <div class="projects-grid" id="recentProjectsList">
+        <p>Loading your saved websites...</p>
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 ARAM EVENTS
+        <span>Designed for creators and event teams.</span>
+    </footer>
+
+</main>
+
+
+<!-- =================================
+     EXISTING JAVASCRIPT
+================================= -->
+
+<script src="js/auth-guard.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/chatbot.js"></script>
+
+<script src="js/experience-3d.js"></script>
+</body>
+</html>

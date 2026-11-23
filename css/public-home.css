@@ -1,0 +1,1172 @@
+
+/* ==========================================
+   ARAM EVENTS - PUBLIC HOMEPAGE
+   Premium Purple / Dark Event Theme
+========================================== */
+
+/* GLOBAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #172033;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   NAVIGATION BAR
+========================================== */
+
+.navbar {
+    min-height: 76px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid #eeeaf5;
+    box-shadow: 0 3px 15px rgba(20, 15, 40, 0.04);
+}
+
+.brand {
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: -2px;
+
+    background: linear-gradient(
+        90deg,
+        #407bd5,
+        #24a96b,
+        #f5a623
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #29243c;
+}
+
+.nav-links a {
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #7250f6;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.login-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #29243c;
+    margin-right: 8px;
+}
+
+.login-link:hover {
+    color: #7250f6;
+}
+
+.nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 19px;
+    border-radius: 11px;
+
+    background: #f5f1ff;
+    color: #6848ed;
+
+    border: 1px solid #ded3ff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    transition: 0.25s ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    background: #eee8ff;
+}
+
+.nav-btn.primary {
+    background: #6e4df5;
+    color: #ffffff;
+    border-color: #6e4df5;
+}
+
+.nav-btn.primary:hover {
+    background: #5534df;
+}
+
+
+/* ==========================================
+   HERO SECTION
+   Premium Event Background Image
+========================================== */
+
+.hero {
+    min-height: 690px;
+
+    padding: 100px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(10, 7, 25, 0.91),
+            rgba(24, 12, 52, 0.78),
+            rgba(10, 7, 25, 0.89)
+        ),
+        url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=2000");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+/* Additional image overlay */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 40%,
+            rgba(93, 76, 220, 0.23),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(151, 77, 255, 0.25),
+            transparent 35%
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 950px;
+    width: 100%;
+}
+
+.hero-label {
+    display: inline-block;
+
+    padding: 10px 19px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    background: rgba(255,255,255,0.09);
+
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+    backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 76px);
+
+    line-height: 1.13;
+
+    font-weight: 900;
+    letter-spacing: -2.5px;
+
+    color: #ffffff;
+}
+
+.hero h1 span {
+    color: #ffca65;
+}
+
+.hero p {
+    margin: 28px auto 35px;
+
+    max-width: 690px;
+
+    color: #eee8fa;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 17px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 17px 32px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+    font-size: 14px;
+
+    display: inline-flex;
+    gap: 15px;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+}
+
+.hero-btn.yellow {
+    background: #ffc65f;
+    color: #17152b;
+
+    box-shadow: 0 8px 25px rgba(255,198,95,0.2);
+}
+
+.hero-btn.yellow:hover {
+    background: #ffda8d;
+}
+
+.hero-btn.outline {
+    color: #ffffff;
+
+    border: 1px solid rgba(255,255,255,0.55);
+
+    background: rgba(255,255,255,0.10);
+
+    backdrop-filter: blur(8px);
+}
+
+.hero-btn.outline:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Decorative lighting */
+
+.hero-glow {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    filter: blur(75px);
+
+    pointer-events: none;
+}
+
+.hero-glow-one {
+    background: rgba(96, 70, 255, 0.32);
+
+    top: 8%;
+    left: 5%;
+}
+
+.hero-glow-two {
+    background: rgba(174, 71, 255, 0.24);
+
+    right: 5%;
+    bottom: 5%;
+}
+
+
+/* ==========================================
+   COMMON SECTION HEADINGS
+========================================== */
+
+.section-header {
+    text-align: center;
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    color: #7954f5;
+
+    font-size: 12px;
+    letter-spacing: 2.5px;
+
+    font-weight: 900;
+}
+
+.section-title {
+    font-size: clamp(30px, 4vw, 45px);
+
+    margin: 15px 0;
+
+    letter-spacing: -1.7px;
+
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.section-description {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #6b7285;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   FEATURES SECTION
+   Dark Purple Background
+========================================== */
+
+.features {
+    position: relative;
+
+    padding: 95px 10%;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 85% 15%,
+            rgba(105, 69, 205, 0.17),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #090817,
+            #15102b,
+            #090817
+        );
+
+    color: #ffffff;
+}
+
+/* Subtle background grid */
+
+.features::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+
+    pointer-events: none;
+}
+
+.features .section-header {
+    position: relative;
+    z-index: 1;
+}
+
+.features .eyebrow {
+    color: #9579ff;
+}
+
+.features .section-title {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.features .section-description {
+    color: #b7b3c8;
+}
+
+
+/* Feature grid */
+
+.feature-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin-top: 48px;
+
+    text-align: left;
+}
+
+
+/* Feature cards */
+
+.feature-card {
+    padding: 30px;
+
+    min-height: 185px;
+
+    background: rgba(9, 8, 24, 0.75);
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #9579ff;
+
+    box-shadow:
+        0 15px 40px rgba(96, 65, 200, 0.22);
+}
+
+
+/* Feature icons */
+
+.feature-icon {
+    width: 53px;
+    height: 53px;
+
+    border-radius: 15px;
+
+    background: #eee9ff;
+
+    color: #7050ed;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #b9b5c9;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   SUBSCRIPTION PRICING SECTION
+   White Background + Dark Readable Text
+========================================== */
+
+.pricing {
+    background: #f7f6fc;
+
+    padding: 95px 10%;
+
+    text-align: center;
+}
+
+.pricing .section-header {
+    margin-bottom: 50px;
+}
+
+.pricing .eyebrow {
+    color: #7654f4;
+}
+
+.pricing .section-title {
+    color: #17152b;
+
+    font-weight: 900;
+}
+
+.pricing .section-description {
+    color: #656477;
+}
+
+
+/* Pricing cards grid */
+
+.pricing-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 23px;
+
+    margin-top: 45px;
+
+    text-align: left;
+}
+
+
+/* Pricing card */
+
+.price-card {
+    background: #ffffff;
+
+    padding: 32px;
+
+    border: 1px solid #e5e0ef;
+
+    border-radius: 20px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 390px;
+
+    box-shadow: 0 8px 25px rgba(30, 20, 60, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 18px 40px rgba(35, 20, 70, 0.09);
+}
+
+
+/* Popular card */
+
+.price-card.popular {
+    border: 2px solid #7655f3;
+
+    box-shadow: 0 15px 40px rgba(118, 85, 243, 0.12);
+}
+
+.popular-tag {
+    position: absolute;
+
+    top: -14px;
+    right: 22px;
+
+    background: #7655f3;
+
+    color: #ffffff;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Plan names */
+
+.price-card h3 {
+    color: #172033;
+
+    font-size: 23px;
+
+    font-weight: 900;
+
+    margin-bottom: 10px;
+}
+
+.price-card p {
+    color: #626579;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    line-height: 1.7;
+}
+
+
+/* Price */
+
+.price {
+    color: #6245e9;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    margin: 23px 0 8px;
+
+    line-height: 1.25;
+}
+
+.price-note {
+    color: #737589;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* Plan features */
+
+.price-card ul {
+    list-style: none;
+
+    margin: 25px 0;
+    padding: 0;
+
+    flex: 1;
+}
+
+.price-card li {
+    padding: 11px 0;
+
+    border-bottom: 1px solid #ebe8f1;
+
+    color: #42485b;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+/* Pricing button */
+
+.price-action {
+    display: block;
+
+    text-align: center;
+
+    background: #7251f3;
+
+    color: #ffffff;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 900;
+
+    transition: 0.25s ease;
+}
+
+.price-action:hover {
+    background: #5636dc;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(114,81,243,0.22);
+}
+
+
+/* ==========================================
+   EVENT WEBSITE PRICING
+========================================== */
+
+.event-pricing {
+    padding: 90px 10%;
+
+    text-align: center;
+
+    background: #ffffff;
+}
+
+.event-pricing .section-title {
+    color: #17152b;
+
+    font-weight: 900;
+}
+
+.event-pricing .section-description {
+    color: #656477;
+}
+
+.event-price-panel {
+    max-width: 900px;
+
+    margin: 38px auto 0;
+
+    border: 1px solid #e6e1ef;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    background: #ffffff;
+
+    box-shadow: 0 8px 25px rgba(30,20,60,0.035);
+}
+
+.event-price-row {
+    padding: 22px 28px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #eeeaf5;
+}
+
+.event-price-row:last-child {
+    border-bottom: 0;
+}
+
+.event-price-row b {
+    color: #172033;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+.event-price-row span {
+    color: #7353ef;
+
+    font-size: 13px;
+
+    font-weight: 800;
+}
+
+.pricing-note {
+    max-width: 750px;
+
+    margin: 25px auto 0;
+
+    color: #777387;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   CALL TO ACTION SECTION
+========================================== */
+
+.cta {
+    position: relative;
+
+    margin: 35px 10% 85px;
+
+    border-radius: 25px;
+
+    padding: 75px 30px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            120deg,
+            #160d30,
+            #4931a4,
+            #7653ee
+        );
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta .eyebrow {
+    color: #d7caff;
+
+    margin-bottom: 18px;
+}
+
+.cta h2 {
+    color: #ffffff;
+
+    font-size: clamp(28px, 4vw, 40px);
+
+    font-weight: 900;
+
+    margin-bottom: 15px;
+
+    letter-spacing: -1px;
+}
+
+.cta p {
+    color: #e0d9fa;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 28px;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    background: #100d20;
+
+    color: #ffffff;
+
+    padding: 45px 10%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+.footer-brand p {
+    color: #aaa5ba;
+
+    font-size: 12px;
+
+    margin-top: 12px;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 22px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #d3cee0;
+}
+
+.footer-links a {
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #a992ff;
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN - TABLETS
+========================================== */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .features,
+    .pricing,
+    .event-pricing {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE DESIGN - MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 15px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .brand {
+        font-size: 25px;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 20px;
+
+        font-size: 12px;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .login-link {
+        font-size: 12px;
+        margin-right: 2px;
+    }
+
+    .nav-btn {
+        padding: 9px 11px;
+
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: 590px;
+
+        padding: 80px 20px;
+
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .hero-btn {
+        padding: 14px 21px;
+
+        font-size: 12px;
+    }
+
+    .features,
+    .pricing,
+    .event-pricing {
+        padding: 65px 6%;
+    }
+
+    .section-title {
+        font-size: 31px;
+    }
+
+    .section-description {
+        font-size: 14px;
+    }
+
+    .feature-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 25px;
+
+        min-height: auto;
+    }
+
+    .price-card {
+        padding: 27px;
+
+        min-height: 370px;
+    }
+
+    .event-price-row {
+        padding: 18px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .cta {
+        margin: 20px 5% 60px;
+
+        padding: 55px 20px;
+    }
+
+    .cta h2 {
+        font-size: 28px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 40px 7%;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ==========================================
+   EXTRA SMALL MOBILE
+========================================== */
+
+@media (max-width: 380px) {
+
+    .nav-actions {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-btn {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 27px;
+    }
+
+}

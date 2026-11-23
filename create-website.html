@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Website Generator | Aram Events</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #f7f7fb;
+            color: #17172a;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        header {
+            min-height: 75px;
+            background: white;
+            border-bottom: 1px solid #e9e9ef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 6%;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: #7655e9;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #55556b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #7655e9;
+        }
+
+        .account {
+            background: #f0edff;
+            padding: 10px 16px;
+            border-radius: 30px;
+            color: #6547d5;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 45px auto;
+            padding: 0 22px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .eyebrow {
+            color: #7958ed;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(30px, 5vw, 48px);
+            margin-bottom: 13px;
+        }
+
+        .intro p {
+            color: #77778b;
+            line-height: 1.7;
+        }
+
+        .generator {
+            background: white;
+            border: 1px solid #e8e8f0;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 12px 45px rgba(30, 20, 80, .05);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            padding: 5px;
+            background: #f5f3ff;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .tab {
+            flex: 1;
+            border: 0;
+            background: transparent;
+            padding: 13px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: 700;
+            color: #77718d;
+        }
+
+        .tab.active {
+            background: white;
+            color: #6748dc;
+            box-shadow: 0 2px 8px #0000000b;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .field {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #88889a;
+            margin-top: 7px;
+            line-height: 1.6;
+        }
+
+        textarea,
+        input,
+        select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e2e2ed;
+            border-radius: 11px;
+            background: #fff;
+            color: #242438;
+            font: inherit;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 155px;
+            line-height: 1.7;
+        }
+
+        textarea:focus,
+        input:focus,
+        select:focus {
+            border-color: #8669ed;
+            box-shadow: 0 0 0 3px #8669ed18;
+        }
+
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .suggestions button {
+            padding: 8px 13px;
+            border: 1px solid #e8e5f4;
+            background: #faf9ff;
+            color: #6551ad;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .suggestions button:hover {
+            background: #eee9ff;
+        }
+
+        /* DESIGN OPTIONS */
+
+        .design-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .design-heading label {
+            margin-bottom: 0;
+        }
+
+        .optional {
+            font-size: 11px;
+            color: #888;
+            background: #f3f3f7;
+            padding: 6px 11px;
+            border-radius: 20px;
+        }
+
+        .auto-design-card {
+            margin-bottom: 15px;
+        }
+
+        .auto-design-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 20px;
+            border: 2px solid #7959e9;
+            border-radius: 13px;
+            cursor: pointer;
+            background: #f8f6ff;
+        }
+
+        .auto-design-option input {
+            width: auto;
+            margin-top: 4px;
+            accent-color: #7959e9;
+        }
+
+        .auto-design-option strong {
+            font-size: 14px;
+            color: #5438c6;
+        }
+
+        .auto-design-option p {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-top: 5px;
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .design-option {
+            border: 1px solid #e6e4ef;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            background: white;
+            transition: .2s;
+        }
+
+        .design-option:hover {
+            border-color: #7959e9;
+            transform: translateY(-2px);
+        }
+
+        .design-option:has(input:checked) {
+            border: 2px solid #7959e9;
+            background: #f8f6ff;
+        }
+
+        .design-option input {
+            width: auto;
+            margin-right: 6px;
+            accent-color: #7959e9;
+        }
+
+        .design-option strong {
+            font-size: 13px;
+        }
+
+        .design-option p {
+            font-size: 11px;
+            color: #888;
+            margin-top: 7px;
+            line-height: 1.5;
+        }
+
+        .upload {
+            border: 2px dashed #d9d4ee;
+            border-radius: 13px;
+            padding: 25px;
+            text-align: center;
+            background: #faf9ff;
+        }
+
+        .upload input {
+            border: 0;
+            padding: 10px;
+            background: transparent;
+        }
+
+        .generate {
+            width: 100%;
+            border: 0;
+            border-radius: 12px;
+            padding: 17px;
+            background: linear-gradient(110deg, #7655e9, #9a66ef);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .generate:hover {
+            filter: brightness(1.08);
+        }
+
+        .generate:disabled {
+            opacity: .6;
+            cursor: wait;
+        }
+
+        #generationStatus {
+            text-align: center;
+            color: #7054d5;
+            font-size: 13px;
+            margin-top: 17px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .category-card {
+            padding: 20px;
+            border: 1px solid #e7e6ef;
+            border-radius: 12px;
+        }
+
+        .category-card h3 {
+            margin-bottom: 13px;
+        }
+
+        .template-link {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+            text-decoration: none;
+            color: #48445b;
+            font-size: 13px;
+        }
+
+        .template-link b {
+            color: #7959e9;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            color: #999;
+            font-size: 12px;
+        }
+
+        @media(max-width:700px) {
+            header {
+                padding: 15px;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav {
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 11px;
+            }
+
+            .generator {
+                padding: 18px;
+            }
+
+            .design-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .template-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:420px) {
+            .design-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/experience-3d.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ARAM <span>EVENTS.</span></div>
+
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="create-website.html">Create Website</a>
+        <a href="projects.html">My Projects</a>
+        <a href="account.html" class="account">My Account</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="intro">
+
+        <div class="eyebrow">✦ LOCAL AI WEBSITE BUILDER</div>
+
+        <h1>Your idea. Your design. Your website.</h1>
+
+        <p>
+            Describe your idea and let AI create a completely different
+            website with images, layouts, content and responsive design.
+        </p>
+
+    </section>
+
+    <section class="generator">
+
+        <div class="tabs">
+
+            <button class="tab active" data-tab="ai">
+                ✦ Generate with AI
+            </button>
+
+            <button class="tab" data-tab="templates">
+                ▦ Choose a template
+            </button>
+
+        </div>
+
+        <!-- AI GENERATOR -->
+
+        <section id="aiPanel">
+
+            <div class="field">
+
+                <label for="websitePrompt">
+                    01 / Describe your website idea
+                </label>
+
+                <textarea
+                    id="websitePrompt"
+                    placeholder="Example: Create a luxury fashion brand website for Aurelle. Use a sophisticated beige, black and ivory palette. Include a full-width fashion campaign hero, new arrivals, men's and women's collections, product cards with images and prices, featured collection, brand story, fashion lookbook, customer reviews and newsletter subscription. Use editorial typography, asymmetrical layouts and premium fashion photography. Make it look like a real luxury fashion brand."
+                ></textarea>
+
+                <div class="suggestions">
+
+                    <button
+                        type="button"
+                        data-prompt="Create a premium luxury wedding photography website with cinematic images, elegant typography, an asymmetric gallery, packages and booking form."
+                    >
+                        Wedding photography
+                    </button>
+
+                    <button
+                        type="button"
+                        data-prompt="Create a futuristic technology conference website with dark backgrounds, neon colors, speaker profiles, event schedule and registration."
+                    >
+                        Technology conference
+                    </button>
+
+                    <button
+                        type="button"
+                        data-prompt="Create a modern restaurant website with full-screen food photography, elegant menu, chef introduction, reservation form and location."
+                    >
+                        Restaurant
+                    </button>
+
+                    <button
+                        type="button"
+                        data-prompt="Create a creative fashion portfolio with editorial layouts, bold typography, full-width images and an interactive gallery."
+                    >
+                        Fashion portfolio
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label for="projectName">
+                    02 / Website or project name
+                </label>
+
+                <input
+                    id="projectName"
+                    type="text"
+                    placeholder="Example: Aurelle Fashion"
+                >
+
+            </div>
+
+            <!-- OPTIONAL DESIGN DIRECTION -->
+
+            <div class="field">
+
+                <div class="design-heading">
+
+                    <label>
+                        03 / Select your design direction
+                    </label>
+
+                    <span class="optional">OPTIONAL</span>
+
+                </div>
+
+                <!-- AUTOMATIC UNIQUE DESIGN -->
+
+                <div class="auto-design-card">
+
+                    <label class="auto-design-option">
+
+                        <input
+                            type="radio"
+                            name="designStyle"
+                            value=""
+                            checked
+                        >
+
+                        <div>
+
+                            <strong>
+                                ✦ Let AI create a unique design
+                            </strong>
+
+                            <p>
+                                No need to select a design direction.
+                                AI automatically chooses suitable colors,
+                                typography, layouts, image styles and
+                                website structure based on your idea.
+                            </p>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+                <!-- MANUAL DESIGN OPTIONS -->
+
+                <div class="design-grid">
+
+                    <label class="design-option">
+
+                        <input
+                            type="radio"
+                            name="designStyle"
+                            value="Minimal and elegant"
+                        >
+
+                        <strong>Minimal & Elegant</strong>
+
+                        <p>
+                            Clean spacing and premium typography.
+                        </p>
+
+                    </label>
+
+                    <label class="design-option">
+
+                        <input
+                            type="radio"
+                            name="designStyle"
+                            value="Bold and colorful"
+                        >
+
+                        <strong>Bold & Colorful</strong>
+
+                        <p>
+                            Strong colors and expressive layouts.
+                        </p>
+
+                    </label>
+
+                    <label class="design-option">
+
+                        <input
+                            type="radio"
+                            name="designStyle"
+                            value="Dark premium"
+                        >
+
+                        <strong>Dark Premium</strong>
+
+                        <p>
+                            Luxury dark visual identity.
+                        </p>
+
+                    </label>
+
+                    <label class="design-option">
+
+                        <input
+                            type="radio"
+                            name="designStyle"
+                            value="Modern editorial"
+                        >
+
+                        <strong>Modern Editorial</strong>
+
+                        <p>
+                            Magazine-inspired compositions.
+                        </p>
+
+                    </label>
+
+                    <label class="design-option">
+
+                        <input
+                            type="radio"
+                            name="designStyle"
+                            value="Corporate professional"
+                        >
+
+                        <strong>Corporate</strong>
+
+                        <p>
+                            Professional business layouts.
+                        </p>
+
+                    </label>
+
+                    <label class="design-option">
+
+                        <input
+                            type="radio"
+                            name="designStyle"
+                            value="Creative experimental"
+                        >
+
+                        <strong>Creative Experimental</strong>
+
+                        <p>
+                            Unexpected grids and interactions.
+                        </p>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- FLYER UPLOAD -->
+
+            <div class="field">
+
+                <label for="flyerFile">
+                    04 / Upload an optional flyer or PDF
+                </label>
+
+                <div class="upload">
+
+                    <p>
+                        📁 Upload your reference image or event flyer
+                    </p>
+
+                    <input
+                        type="file"
+                        id="flyerFile"
+                        accept=".jpg,.jpeg,.png,.webp,.pdf"
+                    >
+
+                    <p class="hint">
+                        JPG, PNG, WEBP or PDF · Maximum 10 MB
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- GENERATE BUTTON -->
+
+            <button
+                class="generate"
+                id="generateBtn"
+                type="button"
+            >
+                ✦ Generate my unique website →
+            </button>
+
+            <div
+                id="generationStatus"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+        <!-- TEMPLATE LIBRARY -->
+
+        <section id="templatesPanel" class="hidden">
+
+            <div class="field">
+
+                <label for="templateSearch">
+                    Search templates
+                </label>
+
+                <input
+                    id="templateSearch"
+                    type="search"
+                    placeholder="Search portfolios, events, business..."
+                >
+
+            </div>
+
+            <div
+                id="templateGrid"
+                class="template-grid"
+            >
+                Loading templates...
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+<footer>
+    ARAM EVENTS · Powered by Local AI
+</footer>
+
+<!-- LOAD EACH SCRIPT ONLY ONCE -->
+
+<script src="js/create-website.js" defer></script>
+<script src="js/chatbot.js" defer></script>
+
+<script src="js/experience-3d.js"></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Aram Events</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f4f1fa;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            padding: 14px;
+        }
+
+        .left {
+            background:
+                radial-gradient(circle at 75% 20%, #7454ed, transparent 40%),
+                linear-gradient(135deg, #17152d, #49358d);
+            border-radius: 19px;
+            padding: 45px 9%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: calc(100vh - 28px);
+        }
+
+        .brand {
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .brand span {
+            display: inline-grid;
+            place-items: center;
+            width: 28px;
+            height: 28px;
+            margin-right: 9px;
+            border-radius: 9px;
+            background: #a995ff;
+        }
+
+        .hero small {
+            color: #c5b8ff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 5vw, 57px);
+            line-height: 1.08;
+            margin: 22px 0;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #b5a3ff;
+        }
+
+        .hero p {
+            max-width: 380px;
+            color: #e2ddff;
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .left footer {
+            color: #c6baff;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 35px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 390px;
+        }
+
+        .eyebrow {
+            color: #7655ed;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 25px;
+            color: #17152c;
+            margin: 13px 0;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #77738a;
+            line-height: 1.7;
+            margin-bottom: 27px;
+        }
+
+        .field {
+            margin-bottom: 17px;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: #252139;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ded9eb;
+            background: white;
+            border-radius: 9px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        input:focus {
+            border-color: #7956ee;
+            box-shadow: 0 0 0 3px #7956ee18;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #6950dc;
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        button:hover {
+            background: #5439c4;
+        }
+
+        button:disabled {
+            opacity: .6;
+            cursor: not-allowed;
+        }
+
+        #message {
+            display: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        #message.error {
+            display: block;
+            color: #a32a35;
+            background: #fff0f0;
+        }
+
+        #message.success {
+            display: block;
+            color: #187a45;
+            background: #eaf8ef;
+        }
+
+        .bottom {
+            text-align: center;
+            margin-top: 28px;
+            color: #858097;
+            font-size: 12px;
+        }
+
+        .bottom a {
+            color: #6547dd;
+            text-decoration: none;
+            font-weight: 800;
+            margin-left: 5px;
+        }
+
+        .note {
+            text-align: center;
+            color: #aaa4b9;
+            font-size: 10px;
+            margin-top: 27px;
+        }
+
+        @media(max-width: 750px) {
+            body {
+                grid-template-columns: 1fr;
+                padding: 10px;
+            }
+
+            .left {
+                min-height: 300px;
+                padding: 30px;
+            }
+
+            .left footer {
+                margin-top: 40px;
+            }
+
+            .right {
+                padding: 45px 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/experience-3d.css">
+</head>
+
+<body>
+
+    <section class="left">
+
+        <div class="brand">
+            <span>A</span> ARAM EVENTS
+        </div>
+
+        <div class="hero">
+            <small>THE EVENT WEBSITE STUDIO</small>
+
+            <h1>
+                Create your<br>
+                <span>next big experience.</span>
+            </h1>
+
+            <p>
+                Join Aram Events and turn your ideas,
+                event posters and creative visions into
+                professional websites with AI.
+            </p>
+        </div>
+
+        <footer>
+            LOCAL AI · YOUR CREATIVE WORKSPACE
+        </footer>
+
+    </section>
+
+
+    <section class="right">
+
+        <div class="form-container">
+
+            <span class="eyebrow">WELCOME TO ARAM</span>
+
+            <h2>Create your account</h2>
+
+            <p class="subtitle">
+                Register to access your event website workspace.
+            </p>
+
+            <div id="message"></div>
+
+            <form id="registerForm">
+
+                <div class="field">
+                    <label for="name">Full name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                        maxlength="80"
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="email">Email address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="At least 6 characters"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Enter password again"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <button type="submit" id="registerButton">
+                    Create account →
+                </button>
+
+            </form>
+
+            <div class="bottom">
+                Already have an account?
+                <a href="login.html">Sign in</a>
+            </div>
+
+            <div class="note">
+                ARAM EVENTS · LOCAL ACCOUNT REGISTRATION
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+        const form = document.getElementById("registerForm");
+        const message = document.getElementById("message");
+        const button = document.getElementById("registerButton");
+
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = type;
+        }
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+            const confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            if (password.length < 6) {
+                showMessage("Password must contain at least 6 characters.", "error");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showMessage("Passwords do not match.", "error");
+                return;
+            }
+
+            button.disabled = true;
+            button.textContent = "Creating account...";
+
+            try {
+                const response = await fetch("/api/auth/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    credentials: "include",
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        password
+                    })
+                });
+
+                const result = await response.json();
+
+                if (!response.ok || !result.success) {
+                    throw new Error(
+                        result.message || "Registration failed."
+                    );
+                }
+
+                showMessage(
+                    "Account created successfully! Redirecting to login...",
+                    "success"
+                );
+
+                form.reset();
+
+                setTimeout(() => {
+                    window.location.href = "login.html?registered=1";
+                }, 1500);
+
+            } catch (error) {
+                showMessage(error.message, "error");
+
+                button.disabled = false;
+                button.textContent = "Create account →";
+            }
+        });
+    </script>
+
+    <script src="js/chatbot.js"></script>
+
+<script src="js/experience-3d.js"></script>
+</body>
+</html>
