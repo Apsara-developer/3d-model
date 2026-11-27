@@ -5,7 +5,7 @@
   const protectedPages = ['index.html','create-website.html','editor.html','template-library.html','bookings.html'];
   if (protectedPages.includes(path)) {
     const nav=document.createElement('div'); nav.className='ae-global-nav';
-    nav.innerHTML='<div class="ae-brand">✦ <b>ARAM</b> EVENTS</div><nav class="ae-nav-links"><a href="index.html">Workspace</a><a href="create-website.html">AI Generator</a><a href="create-website.html#poster">Poster Studio</a><a href="template-library.html">Templates</a><a href="bookings.html" class="ae-booking-link">Bookings ↗</a><a href="editor.html">Editor</a></nav>';
+    nav.innerHTML='<div class="ae-brand">✦ <b>ARAM</b> EVENTS</div><nav class="ae-nav-links"><a href="index.html">Workspace</a><a href="/#explore-events">Explore Events</a><a href="/#create-event">Create Event</a><a href="create-website.html">AI Generator</a><a href="create-website.html#poster">Poster Studio</a><a href="template-library.html">Templates</a><a href="bookings.html" class="ae-booking-link">Bookings ↗</a><a href="editor.html">Editor</a></nav>';
     const main=document.querySelector('main.main')||document.querySelector('main');
     if(main) main.parentNode.insertBefore(nav,main); else document.body.insertBefore(nav,document.body.firstChild);
     const sideNav=document.querySelector('.sidebar nav');

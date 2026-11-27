@@ -15,6 +15,8 @@ const {
     fallbackPlan
 } = require("./website-engine");
 
+const publicRegistrationsRouter = require("./public-registrations");
+
 const app = express();
 
 // ==================================================
@@ -340,7 +342,7 @@ app.use(express.static(FRONTEND, {
 }));
 
 // ==================================================
-// HOMEPAGE
+// HOMEPAGE & PUBLIC EVENT PAGE
 // ==================================================
 
 app.get("/", (req, res) => {
@@ -348,6 +350,20 @@ app.get("/", (req, res) => {
         path.join(FRONTEND, "home.html")
     );
 });
+
+app.get("/event", (req, res) => {
+    res.sendFile(
+        path.join(FRONTEND, "event.html")
+    );
+});
+
+app.get("/events/:slug", (req, res) => {
+    res.sendFile(
+        path.join(FRONTEND, "event.html")
+    );
+});
+
+app.use(publicRegistrationsRouter);
 
 // ==================================================
 // REGISTER
@@ -1819,6 +1835,7 @@ app.listen(PORT, () => {
     console.log("======================================");
 
     console.log(`Website:   http://localhost:${PORT}`);
+    console.log(`Event:     http://localhost:${PORT}/event`);
     console.log(`Homepage:  http://localhost:${PORT}/home.html`);
     console.log(`Dashboard: http://localhost:${PORT}/index.html`);
     console.log(`Create:    http://localhost:${PORT}/create-website.html`);

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="Aram Innovation and Experience Summit 2026 editorial banner">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="55%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#1d3557"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <pattern id="gridPattern" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="560" fill="url(#bgGrad)"/>
+  <rect width="1200" height="560" fill="url(#gridPattern)"/>
+
+  <!-- Ambient flat geometric shapes -->
+  <circle cx="960" cy="140" r="210" fill="#38bdf8" fill-opacity="0.10"/>
+  <circle cx="1050" cy="420" r="180" fill="#f59e0b" fill-opacity="0.10"/>
+  <circle cx="210" cy="480" r="220" fill="#818cf8" fill-opacity="0.09"/>
+
+  <!-- Architectural stage arcs -->
+  <path d="M 650 560 A 320 320 0 0 1 1180 280" fill="none" stroke="url(#accentGrad)" stroke-width="2" stroke-opacity="0.45"/>
+  <path d="M 730 560 A 250 250 0 0 1 1180 350" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.18"/>
+
+  <!-- Editorial visual frame on right -->
+  <rect x="740" y="96" width="380" height="368" rx="24" fill="url(#cardGrad)" stroke="#ffffff" stroke-opacity="0.16" stroke-width="1.5"/>
+  <rect x="772" y="132" width="120" height="8" rx="4" fill="url(#accentGrad)"/>
+  <text x="772" y="182" fill="#e2e8f0" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="18" font-weight="700" letter-spacing="2">DEC 19 · 2026</text>
+  <text x="772" y="218" fill="#94a3b8" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="16">BENGALURU · THE GRAND PAVILION</text>
+
+  <!-- Abstract stage bars -->
+  <rect x="772" y="260" width="316" height="1" fill="#ffffff" fill-opacity="0.14"/>
+  <rect x="772" y="294" width="64" height="64" rx="14" fill="#38bdf8" fill-opacity="0.22" stroke="#38bdf8" stroke-opacity="0.5"/>
+  <rect x="854" y="294" width="64" height="64" rx="14" fill="#818cf8" fill-opacity="0.22" stroke="#818cf8" stroke-opacity="0.5"/>
+  <rect x="936" y="294" width="64" height="64" rx="14" fill="#f59e0b" fill-opacity="0.22" stroke="#f59e0b" stroke-opacity="0.5"/>
+  <rect x="1018" y="294" width="70" height="64" rx="14" fill="#10b981" fill-opacity="0.22" stroke="#10b981" stroke-opacity="0.5"/>
+
+  <text x="772" y="405" fill="#f8fafc" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="700">Keynotes · Labs · Networking</text>
+  <text x="772" y="432" fill="#cbd5e1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="15">Open public registration · Limited to 250 guests</text>
+
+  <!-- Left banner typography -->
+  <rect x="76" y="112" width="184" height="34" rx="17" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.18"/>
+  <text x="98" y="134" fill="#38bdf8" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="700" letter-spacing="1.6">ARAM EVENTS 2026</text>
+
+  <text x="76" y="218" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="54" font-weight="800" letter-spacing="-1">Aram Innovation &amp;</text>
+  <text x="76" y="282" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="54" font-weight="800" letter-spacing="-1">Experience Summit</text>
+
+  <rect x="76" y="314" width="140" height="5" rx="2.5" fill="url(#accentGrad)"/>
+
+  <text x="76" y="366" fill="#cbd5e1" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22">Live Gathering for Event Creators &amp; Builders</text>
+  <text x="76" y="402" fill="#94a3b8" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17">Saturday, December 19, 2026 · 9:30 AM – 5:30 PM IST</text>
+</svg>

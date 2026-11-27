@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="Product and Design Systems Workshop banner">
+  <defs>
+    <linearGradient id="bgW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171033"/>
+      <stop offset="50%" stop-color="#2c1d5e"/>
+      <stop offset="100%" stop-color="#12344d"/>
+    </linearGradient>
+    <linearGradient id="accentW" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="560" fill="url(#bgW)"/>
+  <circle cx="980" cy="140" r="210" fill="#8b5cf6" fill-opacity="0.18"/>
+  <circle cx="880" cy="430" r="170" fill="#22d3ee" fill-opacity="0.14"/>
+  <rect x="740" y="96" width="380" height="368" rx="24" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.18"/>
+  <rect x="776" y="140" width="110" height="8" rx="4" fill="url(#accentW)"/>
+  <rect x="776" y="182" width="308" height="92" rx="14" fill="#ffffff" fill-opacity="0.08"/>
+  <rect x="776" y="294" width="144" height="120" rx="14" fill="#7c3aed" fill-opacity="0.32" stroke="#a78bfa" stroke-opacity="0.45"/>
+  <rect x="940" y="294" width="144" height="120" rx="14" fill="#0891b2" fill-opacity="0.28" stroke="#22d3ee" stroke-opacity="0.45"/>
+  <rect x="76" y="118" width="210" height="34" rx="17" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.2"/>
+  <text x="98" y="140" fill="#67e8f9" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="700" letter-spacing="1.6">HANDS-ON WORKSHOP</text>
+  <text x="76" y="226" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">Design Systems &amp;</text>
+  <text x="76" y="288" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">Live UX Craft Lab</text>
+  <rect x="76" y="320" width="150" height="5" rx="2.5" fill="url(#accentW)"/>
+  <text x="76" y="372" fill="#e2e8f0" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22">Interactive Studio Session · Limited Seats</text>
+</svg>

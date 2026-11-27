@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-label="Indie Sound and Culture Evening banner">
+  <defs>
+    <linearGradient id="bgC" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#190e2e"/>
+      <stop offset="55%" stop-color="#3a1959"/>
+      <stop offset="100%" stop-color="#181230"/>
+    </linearGradient>
+    <linearGradient id="accentC" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="560" fill="url(#bgC)"/>
+  <circle cx="950" cy="280" r="230" fill="#f59e0b" fill-opacity="0.14"/>
+  <circle cx="1020" cy="170" r="140" fill="#ec4899" fill-opacity="0.14"/>
+  <circle cx="950" cy="280" r="170" fill="none" stroke="url(#accentC)" stroke-width="2" stroke-opacity="0.45"/>
+  <circle cx="950" cy="280" r="110" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.22"/>
+  <circle cx="950" cy="280" r="46" fill="url(#accentC)" fill-opacity="0.85"/>
+  <rect x="76" y="118" width="215" height="34" rx="17" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.2"/>
+  <text x="98" y="140" fill="#fcd34d" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="13" font-weight="700" letter-spacing="1.6">CULTURE &amp; SHOWCASE</text>
+  <text x="76" y="226" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">Courtyard Sound &amp;</text>
+  <text x="76" y="288" fill="#ffffff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="52" font-weight="800" letter-spacing="-1">Creator Night 2026</text>
+  <rect x="76" y="320" width="150" height="5" rx="2.5" fill="url(#accentC)"/>
+  <text x="76" y="372" fill="#f1e8ff" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22">Acoustic Sets · Visual Installations · Open Gathering</text>
+</svg>
