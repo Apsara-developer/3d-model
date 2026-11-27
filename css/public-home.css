@@ -1689,6 +1689,33 @@ body.ae-3d .search-box input::placeholder {
     color: #b91c1c;
 }
 
+.event-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.event-view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 9px 13px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #7c3aed, #06b6d4);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-view-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+}
+
 .event-card-cta,
 .card-cta-mock {
     display: inline-flex;

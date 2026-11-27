@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Bharadwaj's Autograph — The Symphony of Light. An Unforgettable Musical Evening. January 16, 2027 at Vel's Vidhyalaya CBSE School, Tenkasi."/>
+  <meta property="og:title" content="Bharadwaj's Autograph — The Symphony of Light"/>
+  <meta property="og:description" content="An Unforgettable Musical Evening. January 16, 2027 · Tenkasi, Tamil Nadu"/>
+  <meta property="og:image" content="/assets/bharadwaj-banner.svg"/>
+  <meta name="theme-color" content="#020008"/>
+  <title>Bharadwaj's Autograph — The Symphony of Light</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/css/bharadwaj.css"/>
+</head>
+<body>
+
+<!-- ============================================================
+     PAGE LOADER
+     ============================================================ -->
+<div class="bh-loader" id="bh-loader" aria-hidden="true">
+  <div class="bh-loader-ring"></div>
+  <div class="bh-loader-text">The Symphony of Light</div>
+</div>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="bh-nav" id="bh-nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="bh-nav-logo" aria-label="Aram Events home">
+    <div class="bh-nav-logo-mark" aria-hidden="true">♪</div>
+    <span class="bh-nav-logo-text">Aram Events</span>
+  </a>
+
+  <ul class="bh-nav-links" id="bh-nav-links" role="list">
+    <li><a href="#bh-experience">Experience</a></li>
+    <li><a href="#bh-highlights">Highlights</a></li>
+    <li><a href="#bh-details">Event Info</a></li>
+    <li><a href="#bh-venue">Venue</a></li>
+    <li><a href="#bh-tickets">Tickets</a></li>
+    <li>
+      <a href="#bh-tickets" class="bh-nav-cta" data-open-modal aria-label="Book your tickets">
+        Book Tickets
+      </a>
+    </li>
+  </ul>
+
+  <button class="bh-nav-hamburger" id="bh-hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============================================================
+     SECTION 1: HERO — IMMERSIVE 3D SCENE
+     ============================================================ -->
+<section class="bh-hero" id="bh-hero" aria-label="Event hero">
+  <canvas id="bh-canvas" aria-hidden="true"></canvas>
+  <div class="bh-hero-overlay" aria-hidden="true"></div>
+
+  <div class="bh-hero-content">
+    <p class="bh-hero-eyebrow">Aram Events presents</p>
+
+    <h1 class="bh-hero-title" id="bh-hero-title">
+      <span class="line1">
+        <span class="char-span">B</span><span class="char-span">H</span><span class="char-span">A</span><span class="char-span">R</span><span class="char-span">A</span><span class="char-span">D</span><span class="char-span">W</span><span class="char-span">A</span><span class="char-span">J</span><span class="char-span">'</span><span class="char-span">S</span>
+      </span>
+      <span class="line2">
+        <span class="char-span">A</span><span class="char-span">U</span><span class="char-span">T</span><span class="char-span">O</span><span class="char-span">G</span><span class="char-span">R</span><span class="char-span">A</span><span class="char-span">P</span><span class="char-span">H</span>
+      </span>
+    </h1>
+
+    <p class="bh-hero-tagline">The Symphony of Light</p>
+
+    <div class="bh-hero-meta">
+      <span class="bh-hero-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Saturday, January 16, 2027
+      </span>
+      <span class="bh-hero-meta-sep" aria-hidden="true">·</span>
+      <span class="bh-hero-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        5:30 PM – 12:00 AM IST
+      </span>
+      <span class="bh-hero-meta-sep" aria-hidden="true">·</span>
+      <span class="bh-hero-meta-item">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Tenkasi, Tamil Nadu
+      </span>
+    </div>
+
+    <div class="bh-hero-cta-group">
+      <button class="bh-btn-primary" data-open-modal data-pass="General Admission" aria-label="Book your tickets now">
+        🎵 Book Tickets Now
+      </button>
+      <a href="#bh-experience" class="bh-btn-outline" aria-label="Discover the experience">
+        Discover the Experience ↓
+      </a>
+    </div>
+  </div>
+
+  <div class="bh-scroll-indicator" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="bh-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2: THE EXPERIENCE
+     ============================================================ -->
+<section class="bh-section bh-experience" id="bh-experience" aria-labelledby="exp-heading">
+  <div class="bh-container">
+    <div class="bh-experience-grid">
+
+      <div class="bh-experience-visual reveal-left">
+        <div class="bh-experience-frame">
+          <img
+            src="/assets/bharadwaj-banner.svg"
+            alt="Bharadwaj's Autograph event visual"
+            loading="lazy"
+            onerror="this.parentElement.classList.add('bh-experience-frame-fallback'); this.style.display='none';"
+          />
+        </div>
+        <div class="bh-experience-badge">
+          <span class="badge-num" data-count="500" data-suffix="+">500+</span>
+          <span class="badge-label">Expected Guests</span>
+        </div>
+      </div>
+
+      <div class="bh-experience-body reveal-right">
+        <p class="bh-section-label">The Experience</p>
+        <h2 class="bh-section-title" id="exp-heading">
+          An Evening <br/>
+          <span class="bh-gradient-text">Unlike Any Other</span>
+        </h2>
+
+        <div class="bh-divider" aria-hidden="true"></div>
+
+        <p>
+          Bharadwaj's Autograph is more than a concert — it is an immersive musical journey.
+          As night falls over Tenkasi, the air transforms with melody, rhythm, and artistry
+          in a setting that is both intimate and extraordinary.
+        </p>
+
+        <div class="bh-quote">
+          <p>"Every note is a signature. Every moment, a memory."</p>
+        </div>
+
+        <p>
+          Held at the enchanting Vel's Vidhyalaya CBSE School grounds, the evening promises
+          a carefully crafted live music experience — where the music speaks directly to the heart.
+          Gates open at 5:00 PM, with the concert beginning at 5:30 PM and continuing through midnight.
+        </p>
+
+        <div style="margin-top: 2rem;">
+          <button class="bh-btn-primary" data-open-modal data-pass="Early Bird Pass">
+            🎟 Reserve Your Spot
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="bh-particle-hint" style="top: 10%; right: 5%; opacity: 0.4;" aria-hidden="true"></div>
+  <div class="bh-particle-hint" style="bottom: 15%; left: 3%; opacity: 0.3;" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     SECTION 3: HIGHLIGHTS
+     ============================================================ -->
+<section class="bh-section bh-highlights" id="bh-highlights" aria-labelledby="highlights-heading">
+  <div class="bh-container">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+      <p class="bh-section-label reveal">What to Expect</p>
+      <h2 class="bh-section-title reveal" id="highlights-heading">
+        Evening <span class="bh-gradient-text">Highlights</span>
+      </h2>
+    </div>
+
+    <div class="bh-highlights-grid">
+      <div class="bh-highlight-card reveal reveal-delay-1">
+        <div class="bh-highlight-icon" aria-hidden="true">🎹</div>
+        <h3>Live Orchestra</h3>
+        <p>A full live orchestra performing Bharadwaj's iconic compositions across six and a half hours of uninterrupted music.</p>
+      </div>
+      <div class="bh-highlight-card reveal">
+        <div class="bh-highlight-icon" aria-hidden="true">✨</div>
+        <h3>Cinematic Lighting</h3>
+        <p>Professional stage lighting and atmospheric design that transforms the open-air venue into a world of colour and light.</p>
+      </div>
+      <div class="bh-highlight-card reveal reveal-delay-2">
+        <div class="bh-highlight-icon" aria-hidden="true">🎤</div>
+        <h3>Intimate Performances</h3>
+        <p>Up-close performances in a carefully curated venue — every seat feels front row at this exclusive 500-guest event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4: EVENT DETAILS
+     ============================================================ -->
+<section class="bh-section bh-details" id="bh-details" aria-labelledby="details-heading">
+  <div class="bh-container">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+      <p class="bh-section-label reveal">Event Information</p>
+      <h2 class="bh-section-title reveal" id="details-heading">
+        Mark Your <span class="bh-gradient-text">Calendar</span>
+      </h2>
+      <p class="reveal" style="color: var(--muted); font-size: 1.05rem;">
+        Everything you need to know about the evening.
+      </p>
+    </div>
+
+    <div class="bh-details-cards">
+      <div class="bh-detail-card reveal reveal-delay-1">
+        <span class="bh-detail-icon" aria-hidden="true">📅</span>
+        <div class="bh-detail-label">Date</div>
+        <div class="bh-detail-value">January 16, 2027</div>
+        <div class="bh-detail-sub">Saturday</div>
+      </div>
+
+      <div class="bh-detail-card reveal reveal-delay-2">
+        <span class="bh-detail-icon" aria-hidden="true">🕔</span>
+        <div class="bh-detail-label">Timing</div>
+        <div class="bh-detail-value">5:30 PM – 12:00 AM</div>
+        <div class="bh-detail-sub">Gates open at 5:00 PM IST</div>
+      </div>
+
+      <div class="bh-detail-card reveal reveal-delay-3">
+        <span class="bh-detail-icon" aria-hidden="true">📍</span>
+        <div class="bh-detail-label">Venue</div>
+        <div class="bh-detail-value">Vel's Vidhyalaya CBSE School</div>
+        <div class="bh-detail-sub">Tenkasi, Tamil Nadu</div>
+      </div>
+
+      <div class="bh-detail-card reveal reveal-delay-1">
+        <span class="bh-detail-icon" aria-hidden="true">🎵</span>
+        <div class="bh-detail-label">Format</div>
+        <div class="bh-detail-value">Live Music Concert</div>
+        <div class="bh-detail-sub">An intimate musical evening</div>
+      </div>
+
+      <div class="bh-detail-card reveal reveal-delay-2">
+        <span class="bh-detail-icon" aria-hidden="true">🎪</span>
+        <div class="bh-detail-label">Capacity</div>
+        <div class="bh-detail-value"><span data-count="500" data-suffix=" Guests">500 Guests</span></div>
+        <div class="bh-detail-sub">Limited spots — register early</div>
+      </div>
+
+      <div class="bh-detail-card reveal reveal-delay-3">
+        <span class="bh-detail-icon" aria-hidden="true">🌟</span>
+        <div class="bh-detail-label">Organiser</div>
+        <div class="bh-detail-value">Aram Events</div>
+        <div class="bh-detail-sub">events@aramevents.local</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5: MUSICAL JOURNEY / TIMELINE
+     ============================================================ -->
+<section class="bh-section bh-journey" id="bh-journey" aria-labelledby="journey-heading">
+  <div class="bh-container">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto 1rem;">
+      <p class="bh-section-label reveal">Evening Flow</p>
+      <h2 class="bh-section-title reveal" id="journey-heading">
+        The Musical <span class="bh-gradient-text">Journey</span>
+      </h2>
+      <p class="reveal" style="color: var(--muted); font-size: 1.05rem;">
+        An evening crafted as a continuous, immersive experience.
+      </p>
+    </div>
+
+    <div class="bh-timeline">
+      <div class="bh-timeline-item reveal">
+        <div class="bh-timeline-content">
+          <div class="bh-timeline-time">5:00 PM</div>
+          <div class="bh-timeline-title">Gates Open</div>
+          <div class="bh-timeline-desc">
+            Venue entry begins. Find your spot and soak in the atmosphere as the evening awakens.
+          </div>
+        </div>
+        <div class="bh-timeline-dot" aria-hidden="true">🚪</div>
+        <div class="bh-timeline-empty"></div>
+      </div>
+
+      <div class="bh-timeline-item reveal">
+        <div class="bh-timeline-empty"></div>
+        <div class="bh-timeline-dot" aria-hidden="true">🎵</div>
+        <div class="bh-timeline-content">
+          <div class="bh-timeline-time">5:30 PM</div>
+          <div class="bh-timeline-title">Concert Begins</div>
+          <div class="bh-timeline-desc">
+            The musical evening commences. Bharadwaj takes the stage — the first notes fill the air.
+          </div>
+        </div>
+      </div>
+
+      <div class="bh-timeline-item reveal">
+        <div class="bh-timeline-content">
+          <div class="bh-timeline-time">Through the Evening</div>
+          <div class="bh-timeline-title">Continuous Musical Experience</div>
+          <div class="bh-timeline-desc">
+            An uninterrupted journey through melody and rhythm, crafted to move you from dusk to midnight.
+          </div>
+        </div>
+        <div class="bh-timeline-dot" aria-hidden="true">✨</div>
+        <div class="bh-timeline-empty"></div>
+      </div>
+
+      <div class="bh-timeline-item reveal">
+        <div class="bh-timeline-empty"></div>
+        <div class="bh-timeline-dot" aria-hidden="true">🌙</div>
+        <div class="bh-timeline-content">
+          <div class="bh-timeline-time">12:00 AM</div>
+          <div class="bh-timeline-title">Grand Finale</div>
+          <div class="bh-timeline-desc">
+            The Symphony of Light reaches its crescendo. A night to be remembered, always.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 6: VENUE
+     ============================================================ -->
+<section class="bh-section bh-venue" id="bh-venue" aria-labelledby="venue-heading">
+  <div class="bh-container">
+    <p class="bh-section-label reveal">The Setting</p>
+    <h2 class="bh-section-title reveal" id="venue-heading">
+      Where Music <span class="bh-gradient-text">Comes Alive</span>
+    </h2>
+
+    <div class="bh-venue-grid">
+      <div class="bh-venue-map-frame reveal-left" role="img" aria-label="Venue location map">
+        <div class="bh-venue-map-fallback">
+          <div class="map-icon" aria-hidden="true">🗺️</div>
+          <p>
+            <strong style="color: var(--white);">Vel's Vidhyalaya CBSE School</strong><br/>
+            Tenkasi, Tamil Nadu
+          </p>
+          <a
+            href="https://maps.google.com/?q=Vel's+Vidhyalaya+CBSE+School+Tenkasi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bh-venue-map-btn"
+            style="margin-top: 0.5rem;"
+          >
+            📍 Open in Google Maps
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal-right">
+        <div class="bh-venue-info">
+          <h3>Vel's Vidhyalaya CBSE School</h3>
+          <div class="bh-venue-address">
+            Vel's Vidhyalaya CBSE School<br/>
+            Tenkasi, Tamil Nadu, India
+          </div>
+
+          <div class="bh-venue-tags">
+            <span class="bh-venue-tag">Open-Air Venue</span>
+            <span class="bh-venue-tag">Tenkasi, Tamil Nadu</span>
+            <span class="bh-venue-tag">Gates: 5:00 PM</span>
+            <span class="bh-venue-tag">Capacity: 500</span>
+          </div>
+
+          <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem;">
+            Set in the heart of Tenkasi, the venue provides an open and welcoming setting
+            for an extraordinary evening of music. Arrive early to find your perfect spot
+            before the concert begins.
+          </p>
+
+          <a
+            href="https://maps.google.com/?q=Vel's+Vidhyalaya+CBSE+School+Tenkasi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bh-venue-map-btn"
+          >
+            🗺️ Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7: TICKETS
+     ============================================================ -->
+<section class="bh-section bh-tickets" id="bh-tickets" aria-labelledby="tickets-heading">
+  <div class="bh-container">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+      <p class="bh-section-label reveal">Join Us</p>
+      <h2 class="bh-section-title reveal" id="tickets-heading">
+        Reserve Your <span class="bh-gradient-text">Experience</span>
+      </h2>
+      <p class="reveal" style="color: var(--muted); font-size: 1.05rem;">
+        No login required. Register in under a minute.
+      </p>
+    </div>
+
+    <div class="bh-tickets-grid">
+
+      <!-- Early Bird -->
+      <div class="bh-ticket-card reveal reveal-delay-1">
+        <div class="bh-ticket-icon" aria-hidden="true">🌅</div>
+        <div class="bh-ticket-name">Early Bird Pass</div>
+        <ul class="bh-ticket-features" aria-label="Early Bird Pass features">
+          <li>General entry to the concert</li>
+          <li>Priority gate access</li>
+          <li>Digital confirmation code</li>
+          <li>Event souvenir</li>
+        </ul>
+        <button
+          class="bh-ticket-btn"
+          data-open-modal
+          data-pass="Early Bird Pass"
+          aria-label="Book Early Bird Pass"
+        >
+          🎟 Book Early Bird
+        </button>
+      </div>
+
+      <!-- General Admission (featured) -->
+      <div class="bh-ticket-card featured reveal">
+        <div class="bh-ticket-featured-badge">Most Popular</div>
+        <div class="bh-ticket-icon" aria-hidden="true">🎵</div>
+        <div class="bh-ticket-name">General Admission</div>
+        <ul class="bh-ticket-features" aria-label="General Admission features">
+          <li>Full concert access</li>
+          <li>Standard seating area</li>
+          <li>Digital confirmation code</li>
+          <li>Event programme</li>
+          <li>Open to all</li>
+        </ul>
+        <button
+          class="bh-ticket-btn"
+          data-open-modal
+          data-pass="General Admission"
+          aria-label="Book General Admission"
+        >
+          🎵 Book General Admission
+        </button>
+      </div>
+
+      <!-- VIP Pass -->
+      <div class="bh-ticket-card reveal reveal-delay-2">
+        <div class="bh-ticket-icon" aria-hidden="true">👑</div>
+        <div class="bh-ticket-name">VIP Pass</div>
+        <ul class="bh-ticket-features" aria-label="VIP Pass features">
+          <li>Premium seating section</li>
+          <li>Priority entry &amp; check-in</li>
+          <li>Exclusive VIP area access</li>
+          <li>Digital confirmation code</li>
+          <li>Dedicated support</li>
+        </ul>
+        <button
+          class="bh-ticket-btn"
+          data-open-modal
+          data-pass="VIP Pass"
+          aria-label="Book VIP Pass"
+        >
+          👑 Book VIP Pass
+        </button>
+      </div>
+
+    </div>
+
+    <p class="reveal" style="text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 2rem;">
+      🔒 Secure registration — no account required. You will receive a confirmation code immediately.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8: CINEMATIC CLOSING CTA
+     ============================================================ -->
+<section class="bh-cta-section" id="bh-cta" aria-labelledby="cta-heading">
+  <div class="bh-cta-bg" aria-hidden="true"></div>
+
+  <div style="position: relative; z-index: 1;">
+    <p class="bh-section-label reveal" style="text-align: center;">One Night Only</p>
+    <h2 class="bh-cta-title reveal" id="cta-heading">
+      Be Part of <br/>
+      <span class="bh-gradient-text">The Symphony</span>
+    </h2>
+    <p class="bh-cta-sub reveal">
+      January 16, 2027. Vel's Vidhyalaya CBSE School, Tenkasi.<br/>
+      An evening of music. A night of memories.
+    </p>
+    <div class="reveal" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <button class="bh-btn-primary" data-open-modal data-pass="General Admission" style="font-size: 1rem; padding: 1rem 2.5rem;" aria-label="Book your ticket now">
+        🎵 Book Your Ticket
+      </button>
+      <a href="/" class="bh-btn-outline" style="font-size: 1rem; padding: 1rem 2.5rem;">
+        ← Back to Aram Events
+      </a>
+    </div>
+  </div>
+
+  <div class="bh-particle-hint" style="top: 20%; left: 10%; width: 300px; height: 300px; opacity: 0.2;" aria-hidden="true"></div>
+  <div class="bh-particle-hint" style="bottom: 10%; right: 8%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%); opacity: 0.3;" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="bh-footer" role="contentinfo">
+  <div class="bh-footer-logo">
+    <span aria-hidden="true">♪</span>
+    Bharadwaj's Autograph
+  </div>
+  <nav class="bh-footer-links" aria-label="Footer navigation">
+    <a href="/">Aram Events</a>
+    <a href="/#explore-events">Explore Events</a>
+    <a href="/#create-event">Create Event</a>
+    <a href="#bh-tickets" data-open-modal>Book Tickets</a>
+  </nav>
+  <div class="bh-footer-copy">
+    &copy; 2026 Aram Events. All rights reserved.
+  </div>
+</footer>
+
+<!-- ============================================================
+     4-STEP BOOKING MODAL
+     ============================================================ -->
+<div
+  id="bh-modal-overlay"
+  class="bh-modal-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="bh-modal-title"
+  aria-hidden="true"
+>
+  <div class="bh-modal">
+
+    <!-- Modal Header -->
+    <div class="bh-modal-header">
+      <div>
+        <h3 class="bh-modal-title" id="bh-modal-title">Reserve Your Spot</h3>
+        <p class="bh-modal-subtitle">Bharadwaj's Autograph · Jan 16, 2027</p>
+      </div>
+      <button class="bh-modal-close" id="bh-modal-close" aria-label="Close modal">✕</button>
+    </div>
+
+    <!-- 4-Step Progress Nav -->
+    <div class="bh-steps-nav" id="bh-steps-nav" aria-label="Registration progress" role="list">
+      <div class="bh-step-node active" data-step="1" role="listitem" aria-label="Step 1: Choose ticket">1</div>
+      <div class="bh-step-connector" id="bh-conn-1-2"></div>
+      <div class="bh-step-node" data-step="2" role="listitem" aria-label="Step 2: Your details">2</div>
+      <div class="bh-step-connector" id="bh-conn-2-3"></div>
+      <div class="bh-step-node" data-step="3" role="listitem" aria-label="Step 3: Review booking">3</div>
+      <div class="bh-step-connector" id="bh-conn-3-4"></div>
+      <div class="bh-step-node" data-step="4" role="listitem" aria-label="Step 4: Confirmation">4</div>
+    </div>
+
+    <!-- Step 1: Ticket Selection -->
+    <div class="bh-modal-step active" id="bh-step-1" role="group" aria-labelledby="step1-label">
+      <p id="step1-label" class="bh-step-label">Choose your ticket type</p>
+
+      <div class="bh-tix-cards" id="bh-tix-cards" role="radiogroup" aria-label="Ticket type selection">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <!-- Step 2: Attendee Details -->
+    <div class="bh-modal-step" id="bh-step-2" role="group" aria-labelledby="step2-label">
+      <p id="step2-label" class="bh-step-label">Your registration details</p>
+
+      <form id="bh-reg-form" novalidate autocomplete="on">
+        <div class="bh-form-group">
+          <label class="bh-form-label" for="bh-fname">Full Name <span style="color: var(--magenta);">*</span></label>
+          <input class="bh-form-input" id="bh-fname" name="fullName" type="text" placeholder="Your full name" autocomplete="name" required aria-required="true"/>
+        </div>
+
+        <div class="bh-form-row">
+          <div class="bh-form-group">
+            <label class="bh-form-label" for="bh-email">Email <span style="color: var(--magenta);">*</span></label>
+            <input class="bh-form-input" id="bh-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required aria-required="true"/>
+          </div>
+          <div class="bh-form-group">
+            <label class="bh-form-label" for="bh-phone">Phone <span style="color: var(--magenta);">*</span></label>
+            <input class="bh-form-input" id="bh-phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" autocomplete="tel" required aria-required="true"/>
+          </div>
+        </div>
+
+        <div class="bh-form-row">
+          <div class="bh-form-group">
+            <label class="bh-form-label" for="bh-org">Organisation</label>
+            <input class="bh-form-input" id="bh-org" name="organization" type="text" placeholder="Company / College (optional)" autocomplete="organization"/>
+          </div>
+          <div class="bh-form-group">
+            <label class="bh-form-label" for="bh-attendees">No. of Attendees</label>
+            <select class="bh-form-select" id="bh-attendees" name="attendees" aria-label="Number of attendees">
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4 people</option>
+              <option value="5">5 people</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bh-form-group">
+          <label class="bh-form-label" for="bh-role">Your Role</label>
+          <select class="bh-form-select" id="bh-role" name="role" aria-label="Your role">
+            <option value="Attendee">Attendee</option>
+            <option value="Student">Student</option>
+            <option value="Professional">Professional</option>
+            <option value="Press / Media">Press / Media</option>
+            <option value="Sponsor / Partner">Sponsor / Partner</option>
+          </select>
+        </div>
+
+        <div class="bh-form-group">
+          <label class="bh-form-label" for="bh-notes">Special Notes</label>
+          <textarea class="bh-form-textarea" id="bh-notes" name="notes" placeholder="Accessibility needs, dietary preferences, etc. (optional)" rows="2" aria-label="Special notes (optional)"></textarea>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 3: Review -->
+    <div class="bh-modal-step" id="bh-step-3" role="group" aria-labelledby="step3-label">
+      <h4 class="bh-modal-step-title" id="step3-label">Review Your Booking</h4>
+      <p class="bh-modal-step-sub">Confirm your details before we issue your digital pass.</p>
+
+      <div class="bh-review-ticket" aria-label="Booking summary">
+        <div class="bh-review-event-name" id="bh-rv-event">Bharadwaj's Autograph</div>
+        <div class="bh-review-row">
+          <span class="bh-review-label">Ticket Pass</span>
+          <span class="bh-review-value" id="bh-rv-ticket">—</span>
+        </div>
+        <div class="bh-review-row">
+          <span class="bh-review-label">Name</span>
+          <span class="bh-review-value" id="bh-rv-name">—</span>
+        </div>
+        <div class="bh-review-row">
+          <span class="bh-review-label">Email</span>
+          <span class="bh-review-value" id="bh-rv-email">—</span>
+        </div>
+        <div class="bh-review-row">
+          <span class="bh-review-label">Attendees</span>
+          <span class="bh-review-value" id="bh-rv-attendees">—</span>
+        </div>
+        <div class="bh-review-row">
+          <span class="bh-review-label">Date</span>
+          <span class="bh-review-value" id="bh-rv-date">Saturday, January 16, 2027 · 5:30 PM IST</span>
+        </div>
+        <div class="bh-review-row">
+          <span class="bh-review-label">Venue</span>
+          <span class="bh-review-value" id="bh-rv-venue">Vel's Vidhyalaya CBSE School, Tenkasi</span>
+        </div>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--muted); margin-top: 1rem; text-align: center;">
+        By confirming, you agree to our event terms. No payment required.
+      </p>
+    </div>
+
+    <!-- Step 4: Confirmation (QR + Code) -->
+    <div class="bh-modal-step" id="bh-step-4" role="status" aria-live="polite" aria-labelledby="step4-label">
+      <div class="bh-confirm-wrap">
+        <h4 class="bh-confirm-title" id="step4-label">You're Confirmed! 🎉</h4>
+        <p class="bh-confirm-sub">Your digital pass for Bharadwaj's Autograph is ready.</p>
+
+        <div class="bh-holo-ticket" aria-label="Your digital ticket">
+          <div class="bh-holo-ticket-top">
+            <div class="bh-holo-event-name">Bharadwaj's Autograph</div>
+            <div class="bh-holo-ticket-sub">January 16, 2027 · 5:30 PM IST</div>
+          </div>
+          <div class="bh-holo-ticket-body">
+            <div class="bh-holo-row">
+              <span class="bh-holo-label">Pass Type</span>
+              <span class="bh-holo-val" id="bh-confirm-pass-val">—</span>
+            </div>
+            <div class="bh-holo-row">
+              <span class="bh-holo-label">Venue</span>
+              <span class="bh-holo-val">Vel's Vidhyalaya, Tenkasi</span>
+            </div>
+            <div class="bh-confirm-code-box">
+              <div class="bh-confirm-code-label">Confirmation Code</div>
+              <div class="bh-confirm-code-val" id="bh-confirm-code-val" aria-label="Your confirmation code">—</div>
+            </div>
+            <div class="bh-qr-wrap" id="bh-qr-code" aria-label="QR code for your booking"></div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.82rem; color: var(--muted); line-height: 1.6;">
+          📧 Save your confirmation code — you may need it at the gate.<br/>
+          A warm welcome awaits you on January 16, 2027.
+        </p>
+
+        <button class="bh-btn-primary" id="bh-confirm-close" style="width:100%; justify-content:center; margin-top:1.25rem;">
+          ✓ Done — Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Error -->
+    <div class="bh-modal-err" id="bh-modal-err" role="alert" aria-live="assertive"></div>
+
+    <!-- Modal Actions -->
+    <div class="bh-modal-actions" id="bh-modal-actions">
+      <button class="bh-modal-btn-back" id="bh-back-btn" aria-label="Go back to previous step" style="display:none;">
+        ← Back
+      </button>
+      <button class="bh-modal-btn-next" id="bh-next-btn" aria-label="Continue to next step">
+        Next →
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script src="/js/bharadwaj.js"></script>
+</body>
+</html>

@@ -1,409 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aram Innovation &amp; Experience Summit 2026 | Aram Events</title>
-    <meta name="description" content="Join the Aram Innovation &amp; Experience Summit 2026 on December 19, 2026 at The Grand Pavilion, Bengaluru. Register online in seconds — no account required.">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Immersive 3D Event Experience powered by Aram Events."/>
+  <title>Loading Event... | Aram Events</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="/css/public-event.css">
+  <!-- Three.js, GSAP + ScrollTrigger, QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- Dynamic 3D Event Engine Stylesheet -->
+  <link rel="stylesheet" href="/css/event-3d.css"/>
 </head>
-<body>
+<body class="theme-music">
 
-<header class="site-header">
-    <div class="container header-inner">
-        <a href="/home.html" class="brand" aria-label="Aram Events">
-            <span class="brand-mark" aria-hidden="true">A</span>
-            <span class="brand-text">Aram Events</span>
-        </a>
-
-        <nav class="site-nav" aria-label="Event sections">
-            <a href="/#explore-events">Explore Events</a>
-            <a href="/#create-event">Create Event</a>
-            <a href="#about">Overview</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#venue">Venue</a>
-        </nav>
-
-        <button type="button" class="btn btn-primary btn-sm" data-open-register>
-            Register Now
-        </button>
-    </div>
-</header>
-
-<main id="top">
-
-    <!-- HERO & EVENT BANNER -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div class="hero-copy">
-                <span class="event-badge" id="eventCategory">Annual Conference &amp; Live Showcase</span>
-                <h1 id="eventName">Aram Innovation &amp; Experience Summit 2026</h1>
-                <p class="hero-tagline" id="eventTagline">Designing Memorable Live Experiences, Community &amp; Event Craft</p>
-                <p class="hero-description" id="eventDescription">
-                    Join creators, event producers, community builders, and technology leaders for a full-day gathering focused on modern event design, attendee experience, and live production workflows.
-                </p>
-
-                <dl class="key-facts" aria-label="Event date, time and venue">
-                    <div class="fact-item">
-                        <dt>Date</dt>
-                        <dd id="eventDate">Saturday, December 19, 2026</dd>
-                    </div>
-                    <div class="fact-item">
-                        <dt>Time</dt>
-                        <dd id="eventTime">9:30 AM – 5:30 PM IST</dd>
-                    </div>
-                    <div class="fact-item">
-                        <dt>Venue</dt>
-                        <dd id="eventVenue">The Grand Pavilion, Residency Road · Bengaluru</dd>
-                    </div>
-                </dl>
-
-                <div class="pass-tags" id="eventPassTags" aria-label="Available pass types">
-                    <span class="pass-tag">General Admission</span>
-                    <span class="pass-tag">Workshop &amp; Networking Pass</span>
-                    <span class="pass-tag">Student Pass</span>
-                </div>
-
-                <div class="hero-actions">
-                    <button type="button" class="btn btn-primary btn-lg" data-open-register>
-                        Register Now
-                    </button>
-                    <a href="/#explore-events" class="btn btn-secondary btn-lg">
-                        All Events
-                    </a>
-                </div>
-
-                <p class="spots-note" id="spotsNote">
-                    Open public registration · No account or sign-in required.
-                </p>
-            </div>
-
-            <div class="hero-banner-wrap">
-                <img
-                    id="eventBanner"
-                    class="hero-banner"
-                    src="/assets/event-banner.svg"
-                    alt="Aram Innovation &amp; Experience Summit 2026 banner"
-                    width="1200"
-                    height="560"
-                >
-            </div>
-        </div>
-    </section>
-
-    <!-- EVENT INFORMATION & HIGHLIGHTS -->
-    <section class="section section-muted" id="about">
-        <div class="container">
-            <div class="section-heading">
-                <span class="eyebrow">Event Information</span>
-                <h2>What to expect at the summit</h2>
-                <p>
-                    Thoughtfully structured sessions, practical workshops, and unhurried conversations designed for anyone planning or hosting memorable gatherings.
-                </p>
-            </div>
-
-            <div class="highlights-grid" id="highlightsGrid">
-                <article class="info-card">
-                    <span class="card-kicker">Keynotes &amp; Panels</span>
-                    <h3>6 Curated Sessions</h3>
-                    <p>Practical talks from stage directors, hospitality leads, and experience designers.</p>
-                </article>
-                <article class="info-card">
-                    <span class="card-kicker">Hands-On Labs</span>
-                    <h3>Live Production Clinics</h3>
-                    <p>Interactive walkthroughs on event run-of-show planning, guest check-in, and pacing.</p>
-                </article>
-                <article class="info-card">
-                    <span class="card-kicker">Networking</span>
-                    <h3>250+ Peers &amp; Creators</h3>
-                    <p>Structured roundtable lunches and an evening reception in the courtyard.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROGRAM SCHEDULE -->
-    <section class="section" id="schedule">
-        <div class="container">
-            <div class="section-heading">
-                <span class="eyebrow">Program Schedule</span>
-                <h2>A full day built for clarity and connection</h2>
-                <p id="doorsOpenNote">Registration &amp; Coffee Desk opens at 8:45 AM.</p>
-            </div>
-
-            <ol class="schedule-list" id="scheduleList">
-                <li class="schedule-item">
-                    <span class="schedule-time">08:45 AM</span>
-                    <div class="schedule-content">
-                        <h3>Doors Open &amp; Badge Check-In</h3>
-                        <p>Welcome coffee, pastries, and attendee badge pickup at the main foyer.</p>
-                    </div>
-                </li>
-                <li class="schedule-item">
-                    <span class="schedule-time">09:30 AM</span>
-                    <div class="schedule-content">
-                        <h3>Opening Keynote: Designing Calm, High-Impact Gatherings</h3>
-                        <p>How thoughtful scheduling, spatial flow, and hospitality shape unforgettable events.</p>
-                    </div>
-                </li>
-                <li class="schedule-item">
-                    <span class="schedule-time">11:15 AM</span>
-                    <div class="schedule-content">
-                        <h3>Interactive Workshop: From Concept Brief to Run-of-Show</h3>
-                        <p>A step-by-step framework for aligning vendors, venues, and audience touchpoints.</p>
-                    </div>
-                </li>
-                <li class="schedule-item">
-                    <span class="schedule-time">01:00 PM</span>
-                    <div class="schedule-content">
-                        <h3>Curated Networking Lunch</h3>
-                        <p>Hosted dining tables grouped by event format: conferences, culture, and community.</p>
-                    </div>
-                </li>
-                <li class="schedule-item">
-                    <span class="schedule-time">02:30 PM</span>
-                    <div class="schedule-content">
-                        <h3>Panel: Seamless Guest Journeys Without Friction</h3>
-                        <p>Eliminating check-in bottlenecks, clear wayfinding, and accessible venue setups.</p>
-                    </div>
-                </li>
-                <li class="schedule-item">
-                    <span class="schedule-time">04:15 PM</span>
-                    <div class="schedule-content">
-                        <h3>Closing Showcase &amp; Courtyard Reception</h3>
-                        <p>Lightning case studies followed by informal refreshments and open networking.</p>
-                    </div>
-                </li>
-            </ol>
-        </div>
-    </section>
-
-    <!-- VENUE & PRACTICAL DETAILS -->
-    <section class="section section-muted" id="venue">
-        <div class="container venue-grid">
-            <div class="venue-details">
-                <span class="eyebrow">Venue &amp; Logistics</span>
-                <h2 id="venueTitle">The Grand Pavilion, Residency Road</h2>
-                <p id="venueAddress">142 Residency Road, Ashok Nagar, Bengaluru 560025</p>
-
-                <ul class="venue-checklist">
-                    <li>Central Bengaluru location, 10 minutes from MG Road Metro Station.</li>
-                    <li>Step-free elevator access, accessible seating, and quiet lounge areas.</li>
-                    <li>Morning coffee, full lunch service, and afternoon refreshments included.</li>
-                    <li>Instant confirmation code provided immediately upon registration.</li>
-                </ul>
-            </div>
-
-            <aside class="cta-card">
-                <span class="card-kicker">Reserve Your Seat</span>
-                <h3>Ready to join us?</h3>
-                <p>
-                    Complete your registration in under a minute. No account, password, or sign-up required.
-                </p>
-                <div class="cta-card-meta">
-                    <div>
-                        <small>Date &amp; Time</small>
-                        <strong id="ctaDateTime">Dec 19, 2026 · 9:30 AM – 5:30 PM</strong>
-                    </div>
-                    <div>
-                        <small>Organizer</small>
-                        <strong id="ctaOrganizer">Aram Events</strong>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-primary btn-block" data-open-register>
-                    Register Now
-                </button>
-            </aside>
-        </div>
-    </section>
-
-</main>
-
-<footer class="site-footer">
-    <div class="container footer-inner">
-        <div>
-            <strong>Aram Events</strong>
-            <span class="footer-sep">·</span>
-            <span>Public Event Registration Page</span>
-        </div>
-        <div class="footer-links">
-            <a href="#top">Back to top</a>
-            <a href="#about">Overview</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#venue">Venue</a>
-        </div>
-    </div>
-</footer>
-
-<!-- REGISTRATION MODAL -->
-<div class="modal-backdrop" id="registrationModal" hidden>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-header">
-            <div>
-                <span class="eyebrow">Event Registration</span>
-                <h2 id="modalTitle">Register for the Summit</h2>
-                <p class="modal-subtitle" id="modalEventSubtitle">
-                    Saturday, December 19, 2026 · The Grand Pavilion, Bengaluru
-                </p>
-            </div>
-            <button type="button" class="modal-close" id="closeModalBtn" aria-label="Close registration form">
-                &times;
-            </button>
-        </div>
-
-        <div class="modal-body">
-            <div id="formAlert" class="form-alert" role="alert" hidden></div>
-
-            <form id="registrationForm" novalidate>
-                <div class="form-grid">
-                    <div class="form-field form-field-full">
-                        <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
-                        <input
-                            id="fullName"
-                            name="fullName"
-                            type="text"
-                            required
-                            maxlength="100"
-                            autocomplete="name"
-                            placeholder="e.g. Priya Sharma"
-                        >
-                    </div>
-
-                    <div class="form-field">
-                        <label for="email">Email Address <span aria-hidden="true">*</span></label>
-                        <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            required
-                            maxlength="160"
-                            autocomplete="email"
-                            placeholder="you@example.com"
-                        >
-                    </div>
-
-                    <div class="form-field">
-                        <label for="phone">Phone Number <span aria-hidden="true">*</span></label>
-                        <input
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            required
-                            maxlength="30"
-                            autocomplete="tel"
-                            placeholder="+91 98765 43210"
-                        >
-                    </div>
-
-                    <div class="form-field">
-                        <label for="organization">Organization / Company</label>
-                        <input
-                            id="organization"
-                            name="organization"
-                            type="text"
-                            maxlength="120"
-                            autocomplete="organization"
-                            placeholder="Company, studio, or university"
-                        >
-                    </div>
-
-                    <div class="form-field">
-                        <label for="role">Role / Title</label>
-                        <input
-                            id="role"
-                            name="role"
-                            type="text"
-                            maxlength="100"
-                            autocomplete="organization-title"
-                            placeholder="e.g. Event Producer, Designer"
-                        >
-                    </div>
-
-                    <div class="form-field">
-                        <label for="passType">Pass Type <span aria-hidden="true">*</span></label>
-                        <select id="passType" name="passType" required>
-                            <option value="General Admission">General Admission</option>
-                            <option value="Workshop & Networking Pass">Workshop &amp; Networking Pass</option>
-                            <option value="Student Pass">Student Pass</option>
-                            <option value="Partner / Guest Pass">Partner / Guest Pass</option>
-                        </select>
-                    </div>
-
-                    <div class="form-field">
-                        <label for="attendees">Number of Attendees <span aria-hidden="true">*</span></label>
-                        <select id="attendees" name="attendees" required>
-                            <option value="1">1 Attendee</option>
-                            <option value="2">2 Attendees</option>
-                            <option value="3">3 Attendees</option>
-                            <option value="4">4 Attendees</option>
-                            <option value="5">5 Attendees</option>
-                        </select>
-                    </div>
-
-                    <div class="form-field form-field-full">
-                        <label for="notes">Dietary or Accessibility Notes (Optional)</label>
-                        <textarea
-                            id="notes"
-                            name="notes"
-                            rows="3"
-                            maxlength="500"
-                            placeholder="Let us know any dietary preferences or accessibility requirements"
-                        ></textarea>
-                    </div>
-                </div>
-
-                <div class="modal-actions">
-                    <button type="button" class="btn btn-secondary" id="cancelModalBtn">
-                        Cancel
-                    </button>
-                    <button type="submit" class="btn btn-primary" id="submitRegistrationBtn">
-                        Complete Registration
-                    </button>
-                </div>
-            </form>
-
-            <div id="registrationSuccess" class="success-panel" hidden>
-                <div class="success-icon" aria-hidden="true">&#10003;</div>
-                <h3>You're registered!</h3>
-                <p id="successMessage">Registration confirmed! We look forward to welcoming you.</p>
-
-                <dl class="confirmation-box">
-                    <div>
-                        <dt>Confirmation Code</dt>
-                        <dd id="confirmCode">—</dd>
-                    </div>
-                    <div>
-                        <dt>Attendee</dt>
-                        <dd id="confirmName">—</dd>
-                    </div>
-                    <div>
-                        <dt>Pass &amp; Seats</dt>
-                        <dd id="confirmPass">—</dd>
-                    </div>
-                    <div>
-                        <dt>Email</dt>
-                        <dd id="confirmEmail">—</dd>
-                    </div>
-                </dl>
-
-                <div class="modal-actions">
-                    <button type="button" class="btn btn-secondary" id="registerAnotherBtn">
-                        Register Another Guest
-                    </button>
-                    <button type="button" class="btn btn-primary" id="doneSuccessBtn">
-                        Done
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- ============================================================
+     LOADER
+     ============================================================ -->
+<div id="e3d-loader" aria-hidden="true">
+  <div class="e3d-loader-ring"></div>
+  <div class="e3d-loader-name" id="e3d-loader-name">Entering 3D Experience</div>
 </div>
 
-<script src="/js/public-event.js" defer></script>
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="e3d-nav" id="e3d-nav" role="navigation" aria-label="Event navigation">
+  <a href="/" class="e3d-nav-brand" aria-label="Aram Events home">
+    <div class="e3d-nav-brand-dot" aria-hidden="true">✦</div>
+    <span class="e3d-nav-brand-text">Aram Events</span>
+  </a>
+
+  <ul class="e3d-nav-links" id="e3d-nav-links" role="list">
+    <li><a href="#e3d-about">About</a></li>
+    <li><a href="#e3d-highlights">Highlights</a></li>
+    <li><a href="#e3d-details">Details</a></li>
+    <li><a href="#e3d-schedule">Schedule</a></li>
+    <li><a href="#e3d-venue">Venue</a></li>
+    <li><a href="#e3d-tickets">Tickets</a></li>
+    <li>
+      <a href="#e3d-tickets" class="e3d-nav-cta" data-e3d-open>Book Tickets</a>
+    </li>
+  </ul>
+
+  <button class="e3d-hamburger" id="e3d-hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============================================================
+     HERO — CATEGORY-SPECIFIC 3D CANVAS
+     ============================================================ -->
+<section class="e3d-hero" id="e3d-hero" aria-label="Event hero">
+  <canvas id="e3d-canvas" aria-hidden="true"></canvas>
+  <div class="e3d-hero-overlay" aria-hidden="true"></div>
+
+  <div class="e3d-hero-content">
+    <p class="e3d-hero-category" id="e3d-event-category">Aram Events Showcase</p>
+    <h1 class="e3d-hero-title" id="e3d-event-name"><span>Loading Event...</span></h1>
+    <p class="e3d-hero-tagline" id="e3d-event-tagline"></p>
+
+    <div class="e3d-hero-meta">
+      <span class="e3d-hero-meta-item" id="e3d-hero-date"></span>
+      <span class="e3d-hero-meta-item" id="e3d-hero-time"></span>
+      <span class="e3d-hero-meta-item" id="e3d-hero-venue"></span>
+    </div>
+
+    <div class="e3d-hero-cta">
+      <button type="button" class="e3d-btn e3d-btn-primary" data-e3d-open>
+        🎟 Book Tickets Now
+      </button>
+      <a href="#e3d-about" class="e3d-btn e3d-btn-outline">
+        Explore Event ↓
+      </a>
+    </div>
+  </div>
+
+  <div class="e3d-scroll-hint" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="e3d-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT SECTION
+     ============================================================ -->
+<section class="e3d-section e3d-about" id="e3d-about" aria-labelledby="e3d-about-heading">
+  <div class="e3d-container">
+    <div class="e3d-about-grid">
+      <div class="e3d-about-banner erev-l" id="e3d-banner-wrap">
+        <img id="e3d-banner-img" src="" alt="Event visual" loading="lazy"/>
+      </div>
+
+      <div class="e3d-about-body erev-r">
+        <p class="e3d-section-label">About the Event</p>
+        <h2 class="e3d-section-title" id="e3d-about-heading">
+          Experience <span class="e3d-gradient-text" id="e3d-about-name">This Event</span>
+        </h2>
+        <div class="e3d-divider" aria-hidden="true"></div>
+        <p id="e3d-event-description"></p>
+        <div style="margin-top: 1.75rem;">
+          <button type="button" class="e3d-btn e3d-btn-primary" data-e3d-open>
+            Reserve Your Spot →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HIGHLIGHTS SECTION
+     ============================================================ -->
+<section class="e3d-section e3d-highlights" id="e3d-highlights" aria-labelledby="e3d-hl-heading">
+  <div class="e3d-container">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+      <p class="e3d-section-label erev">Key Highlights</p>
+      <h2 class="e3d-section-title erev" id="e3d-hl-heading">
+        What Awaits <span class="e3d-gradient-text">You</span>
+      </h2>
+    </div>
+    <div class="e3d-highlights-grid" id="e3d-highlights-grid">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DETAILS SECTION
+     ============================================================ -->
+<section class="e3d-section e3d-details" id="e3d-details" aria-labelledby="e3d-det-heading">
+  <div class="e3d-container">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+      <p class="e3d-section-label erev">Event Information</p>
+      <h2 class="e3d-section-title erev" id="e3d-det-heading">
+        Essential <span class="e3d-gradient-text">Details</span>
+      </h2>
+    </div>
+    <div class="e3d-details-grid" id="e3d-details-grid">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SCHEDULE SECTION
+     ============================================================ -->
+<section class="e3d-section e3d-schedule" id="e3d-schedule" aria-labelledby="e3d-sch-heading">
+  <div class="e3d-container" style="max-width: 820px;">
+    <p class="e3d-section-label erev">Agenda</p>
+    <h2 class="e3d-section-title erev" id="e3d-sch-heading">
+      Event <span class="e3d-gradient-text">Schedule</span>
+    </h2>
+    <div class="e3d-schedule-list" id="e3d-schedule-list">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VENUE SECTION
+     ============================================================ -->
+<section class="e3d-section e3d-venue" id="e3d-venue" aria-labelledby="e3d-ven-heading">
+  <div class="e3d-container">
+    <p class="e3d-section-label erev">Location</p>
+    <h2 class="e3d-section-title erev" id="e3d-ven-heading">
+      The <span class="e3d-gradient-text">Venue</span>
+    </h2>
+
+    <div class="e3d-venue-grid">
+      <div class="e3d-venue-map erev-l">
+        <div class="fi" aria-hidden="true">📍</div>
+        <p>
+          <strong style="color: var(--white);" id="e3d-venue-map-name">—</strong><br/>
+          <span id="e3d-venue-map-city">—</span>
+        </p>
+        <a id="e3d-venue-map-link" href="#" target="_blank" rel="noopener noreferrer" class="e3d-venue-btn">
+          🗺️ Open in Google Maps
+        </a>
+      </div>
+
+      <div class="e3d-venue-info erev-r">
+        <h3 id="e3d-venue-name">—</h3>
+        <div class="e3d-venue-address" id="e3d-venue-address">—</div>
+        <div class="e3d-venue-tags" id="e3d-venue-tags"></div>
+        <a id="e3d-venue-dir-link" href="#" target="_blank" rel="noopener noreferrer" class="e3d-venue-btn">
+          Get Directions →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TICKETS SECTION
+     ============================================================ -->
+<section class="e3d-section e3d-tickets" id="e3d-tickets" aria-labelledby="e3d-tix-heading">
+  <div class="e3d-container">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+      <p class="e3d-section-label erev">Registration</p>
+      <h2 class="e3d-section-title erev" id="e3d-tix-heading">
+        Select Your <span class="e3d-gradient-text">Pass</span>
+      </h2>
+      <p class="erev" id="e3d-spots-note" style="color: var(--muted); font-size: 0.98rem;">
+        Instant confirmation — no account required.
+      </p>
+    </div>
+
+    <div class="e3d-tickets-grid" id="e3d-tickets-grid">
+      <!-- Populated dynamically from event.passTypes -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CLOSING CTA
+     ============================================================ -->
+<section class="e3d-cta" id="e3d-cta" aria-labelledby="e3d-cta-heading">
+  <div class="e3d-cta-bg" aria-hidden="true"></div>
+  <div style="position: relative; z-index: 1;">
+    <p class="e3d-section-label erev" style="text-align: center;">Don't Miss Out</p>
+    <h2 class="e3d-cta-title erev" id="e3d-cta-heading">
+      Be There <span class="e3d-gradient-text" id="e3d-cta-name">Live</span>
+    </h2>
+    <p class="e3d-cta-sub erev" id="e3d-cta-sub"></p>
+    <div class="erev" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <button type="button" class="e3d-btn e3d-btn-primary" data-e3d-open style="padding: 1rem 2.4rem;">
+        🎟 Book Your Ticket
+      </button>
+      <a href="/" class="e3d-btn e3d-btn-outline" style="padding: 1rem 2.4rem;">
+        ← All Events
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="e3d-footer" role="contentinfo">
+  <div class="e3d-footer-brand" id="e3d-footer-brand">Aram Events</div>
+  <nav class="e3d-footer-links" aria-label="Footer navigation">
+    <a href="/">Aram Events</a>
+    <a href="/#explore-events">Explore Events</a>
+    <a href="/#create-event">Create Event</a>
+    <a href="#e3d-tickets" data-e3d-open>Book Tickets</a>
+  </nav>
+  <div class="e3d-footer-copy">&copy; 2026 Aram Events. All rights reserved.</div>
+</footer>
+
+<!-- ============================================================
+     4-STEP 3D REGISTRATION MODAL
+     ============================================================ -->
+<div
+  id="e3d-modal-overlay"
+  class="e3d-modal-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="e3d-modal-title"
+  aria-hidden="true"
+>
+  <canvas id="e3d-modal-canvas" aria-hidden="true"></canvas>
+
+  <div class="e3d-modal">
+    <button class="e3d-modal-close" id="e3d-modal-close" aria-label="Close modal">✕</button>
+
+    <!-- 4-Step Progress Nav -->
+    <div class="e3d-steps-nav" id="e3d-steps-nav" aria-label="Registration progress">
+      <div class="e3d-step-node active" data-step="1">1</div>
+      <div class="e3d-step-conn"></div>
+      <div class="e3d-step-node" data-step="2">2</div>
+      <div class="e3d-step-conn"></div>
+      <div class="e3d-step-node" data-step="3">3</div>
+      <div class="e3d-step-conn"></div>
+      <div class="e3d-step-node" data-step="4">4</div>
+    </div>
+
+    <!-- Step 1: Select Ticket -->
+    <div class="e3d-modal-step active" id="e3d-step-1">
+      <h3 class="e3d-modal-step-title" id="e3d-modal-title">Select Your Ticket</h3>
+      <p class="e3d-modal-step-sub" id="e3d-modal-subtitle">Choose a pass type to continue</p>
+      <div class="e3d-tix-cards" id="e3d-tix-cards" role="radiogroup" aria-label="Ticket selection"></div>
+    </div>
+
+    <!-- Step 2: Attendee Details -->
+    <div class="e3d-modal-step" id="e3d-step-2">
+      <h3 class="e3d-modal-step-title">Attendee Information</h3>
+      <p class="e3d-modal-step-sub">Tell us where to send your digital pass</p>
+
+      <form id="e3d-reg-form" novalidate autocomplete="on">
+        <div class="e3d-form-group">
+          <label class="e3d-form-label" for="e3d-fname">Full Name <span class="e3d-form-req">*</span></label>
+          <input class="e3d-form-input" id="e3d-fname" name="fullName" type="text" placeholder="Your full name" autocomplete="name" required/>
+        </div>
+
+        <div class="e3d-form-row">
+          <div class="e3d-form-group">
+            <label class="e3d-form-label" for="e3d-email">Email <span class="e3d-form-req">*</span></label>
+            <input class="e3d-form-input" id="e3d-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required/>
+          </div>
+          <div class="e3d-form-group">
+            <label class="e3d-form-label" for="e3d-phone">Phone <span class="e3d-form-req">*</span></label>
+            <input class="e3d-form-input" id="e3d-phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" autocomplete="tel" required/>
+          </div>
+        </div>
+
+        <div class="e3d-form-row">
+          <div class="e3d-form-group">
+            <label class="e3d-form-label" for="e3d-org">Organization</label>
+            <input class="e3d-form-input" id="e3d-org" name="organization" type="text" placeholder="Company / College (optional)"/>
+          </div>
+          <div class="e3d-form-group">
+            <label class="e3d-form-label" for="e3d-attendees">Attendees</label>
+            <select class="e3d-form-select" id="e3d-attendees" name="attendees">
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4 people</option>
+              <option value="5">5 people</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="e3d-form-group">
+          <label class="e3d-form-label" for="e3d-role">Role / Title</label>
+          <select class="e3d-form-select" id="e3d-role" name="role">
+            <option value="Attendee">Attendee</option>
+            <option value="Student">Student</option>
+            <option value="Professional">Professional</option>
+            <option value="Speaker / Guest">Speaker / Guest</option>
+            <option value="Press / Media">Press / Media</option>
+          </select>
+        </div>
+
+        <div class="e3d-form-group">
+          <label class="e3d-form-label" for="e3d-notes">Additional Notes</label>
+          <textarea class="e3d-form-textarea" id="e3d-notes" name="notes" placeholder="Accessibility needs, preferences, etc. (optional)" rows="2"></textarea>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 3: Booking Review -->
+    <div class="e3d-modal-step" id="e3d-step-3">
+      <h3 class="e3d-modal-step-title">Review Your Booking</h3>
+      <p class="e3d-modal-step-sub">Verify your details before confirming</p>
+
+      <div class="e3d-review-ticket">
+        <div class="e3d-review-event-name" id="e3d-rv-event">—</div>
+        <div class="e3d-review-row">
+          <span class="e3d-review-label">Selected Pass</span>
+          <span class="e3d-review-value" id="e3d-rv-ticket">—</span>
+        </div>
+        <div class="e3d-review-row">
+          <span class="e3d-review-label">Attendee</span>
+          <span class="e3d-review-value" id="e3d-rv-name">—</span>
+        </div>
+        <div class="e3d-review-row">
+          <span class="e3d-review-label">Email</span>
+          <span class="e3d-review-value" id="e3d-rv-email">—</span>
+        </div>
+        <div class="e3d-review-row">
+          <span class="e3d-review-label">Tickets</span>
+          <span class="e3d-review-value" id="e3d-rv-count">—</span>
+        </div>
+        <div class="e3d-review-row">
+          <span class="e3d-review-label">Date &amp; Time</span>
+          <span class="e3d-review-value" id="e3d-rv-date">—</span>
+        </div>
+        <div class="e3d-review-row">
+          <span class="e3d-review-label">Venue</span>
+          <span class="e3d-review-value" id="e3d-rv-venue">—</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4: Confirmation -->
+    <div class="e3d-modal-step" id="e3d-step-4" role="status" aria-live="polite">
+      <div class="e3d-confirm-wrap">
+        <h3 class="e3d-confirm-title">Booking Confirmed! 🎉</h3>
+        <p class="e3d-confirm-sub">Your digital pass has been issued.</p>
+
+        <div class="e3d-holo-ticket">
+          <div class="e3d-holo-top">
+            <div class="e3d-holo-event-name" id="e3d-cf-event">—</div>
+            <div class="e3d-holo-sub" id="e3d-cf-date">—</div>
+          </div>
+          <div class="e3d-holo-row">
+            <span class="e3d-holo-label">Pass</span>
+            <span class="e3d-holo-val" id="e3d-cf-pass">—</span>
+          </div>
+          <div class="e3d-holo-row">
+            <span class="e3d-holo-label">Guest</span>
+            <span class="e3d-holo-val" id="e3d-cf-name">—</span>
+          </div>
+          <div class="e3d-holo-row">
+            <span class="e3d-holo-label">Venue</span>
+            <span class="e3d-holo-val" id="e3d-cf-venue">—</span>
+          </div>
+
+          <div class="e3d-code-box">
+            <div class="e3d-code-label">Confirmation Code</div>
+            <div class="e3d-code-val" id="e3d-code-val">—</div>
+          </div>
+
+          <div class="e3d-qr-wrap" id="e3d-qr-code" aria-label="QR code for your booking"></div>
+        </div>
+
+        <button type="button" class="e3d-btn e3d-btn-primary" id="e3d-confirm-close" style="width:100%; justify-content:center;">
+          ✓ Done — Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Error & Actions -->
+    <div class="e3d-modal-err" id="e3d-modal-err" role="alert" aria-live="assertive"></div>
+
+    <div class="e3d-modal-actions" id="e3d-modal-actions">
+      <button type="button" class="e3d-modal-btn-back" id="e3d-back-btn" style="display:none;">← Back</button>
+      <button type="button" class="e3d-modal-btn-next" id="e3d-next-btn">Next →</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/event-3d.js"></script>
 </body>
 </html>

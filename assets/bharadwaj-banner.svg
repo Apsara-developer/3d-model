@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#1a0533"/>
+      <stop offset="60%" stop-color="#08021a"/>
+      <stop offset="100%" stop-color="#020008"/>
+    </radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="20%" cy="60%" r="30%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="80%" cy="60%" r="30%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e879f9"/>
+      <stop offset="50%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#67e8f9"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+    <filter id="glow-filter">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="500" fill="url(#bg)"/>
+  <rect width="1200" height="500" fill="url(#glow1)"/>
+  <rect width="1200" height="500" fill="url(#glow2)"/>
+  <rect width="1200" height="500" fill="url(#glow3)"/>
+
+  <!-- Star field -->
+  <g opacity="0.6">
+    <circle cx="80" cy="40" r="1" fill="white" opacity="0.8"/>
+    <circle cx="200" cy="90" r="1.5" fill="white" opacity="0.6"/>
+    <circle cx="350" cy="30" r="1" fill="white" opacity="0.9"/>
+    <circle cx="500" cy="60" r="1" fill="white" opacity="0.5"/>
+    <circle cx="700" cy="20" r="1.5" fill="white" opacity="0.7"/>
+    <circle cx="900" cy="50" r="1" fill="white" opacity="0.8"/>
+    <circle cx="1050" cy="30" r="1" fill="white" opacity="0.6"/>
+    <circle cx="1150" cy="70" r="1.5" fill="white" opacity="0.9"/>
+    <circle cx="150" cy="460" r="1" fill="white" opacity="0.4"/>
+    <circle cx="400" cy="440" r="1.5" fill="white" opacity="0.6"/>
+    <circle cx="650" cy="470" r="1" fill="white" opacity="0.5"/>
+    <circle cx="950" cy="450" r="1" fill="white" opacity="0.7"/>
+    <circle cx="1100" cy="420" r="1.5" fill="white" opacity="0.4"/>
+    <circle cx="1180" cy="140" r="1" fill="#c084fc" opacity="0.8"/>
+    <circle cx="30" cy="300" r="1" fill="#67e8f9" opacity="0.6"/>
+    <circle cx="1170" cy="380" r="1.5" fill="#e879f9" opacity="0.7"/>
+  </g>
+
+  <!-- Sound wave ribbons -->
+  <g opacity="0.25" filter="url(#blur1)">
+    <path d="M 0 250 Q 150 180 300 250 Q 450 320 600 250 Q 750 180 900 250 Q 1050 320 1200 250" stroke="#7c3aed" stroke-width="2" fill="none"/>
+    <path d="M 0 260 Q 150 170 300 260 Q 450 350 600 260 Q 750 170 900 260 Q 1050 350 1200 260" stroke="#a855f7" stroke-width="1.5" fill="none"/>
+    <path d="M 0 240 Q 150 190 300 240 Q 450 290 600 240 Q 750 190 900 240 Q 1050 290 1200 240" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+    <path d="M 0 270 Q 200 200 400 270 Q 600 340 800 270 Q 1000 200 1200 270" stroke="#e879f9" stroke-width="1" fill="none"/>
+  </g>
+
+  <!-- Decorative geometric elements -->
+  <g opacity="0.15">
+    <polygon points="100,120 130,80 160,120 130,160" fill="none" stroke="#c084fc" stroke-width="1.5"/>
+    <polygon points="1050,350 1080,310 1110,350 1080,390" fill="none" stroke="#67e8f9" stroke-width="1.5"/>
+    <circle cx="180" cy="380" r="30" fill="none" stroke="#7c3aed" stroke-width="1"/>
+    <circle cx="1020" cy="140" r="25" fill="none" stroke="#06b6d4" stroke-width="1"/>
+  </g>
+
+  <!-- Musical notes decorative -->
+  <g opacity="0.2" fill="#e879f9">
+    <text x="80" y="200" font-size="40" font-family="serif">♪</text>
+    <text x="1070" y="300" font-size="35" font-family="serif">♫</text>
+    <text x="50" y="380" font-size="25" font-family="serif">♩</text>
+    <text x="1120" y="180" font-size="28" font-family="serif">♬</text>
+  </g>
+
+  <!-- Center stage glow spotlight -->
+  <ellipse cx="600" cy="380" rx="260" ry="40" fill="#7c3aed" opacity="0.12"/>
+  <ellipse cx="600" cy="400" rx="180" ry="25" fill="#a855f7" opacity="0.15"/>
+
+  <!-- Main title -->
+  <text x="600" y="195" font-family="Georgia, serif" font-size="68" font-weight="900" text-anchor="middle" fill="url(#titleGrad)" filter="url(#glow-filter)" letter-spacing="4">BHARADWAJ'S</text>
+  <text x="600" y="275" font-family="Georgia, serif" font-size="68" font-weight="900" text-anchor="middle" fill="url(#titleGrad)" filter="url(#glow-filter)" letter-spacing="4">AUTOGRAPH</text>
+
+  <!-- Tagline -->
+  <text x="600" y="330" font-family="Arial, sans-serif" font-size="18" font-weight="300" text-anchor="middle" fill="#c084fc" letter-spacing="8" opacity="0.9">AN UNFORGETTABLE MUSICAL EVENING</text>
+
+  <!-- Divider line -->
+  <line x1="460" y1="350" x2="740" y2="350" stroke="#7c3aed" stroke-width="1" opacity="0.6"/>
+  <circle cx="600" cy="350" r="3" fill="#e879f9" opacity="0.8"/>
+
+  <!-- Date and venue info -->
+  <text x="600" y="390" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" fill="#94a3b8" letter-spacing="2">JAN 16, 2027  •  5:30 PM IST  •  TENKASI, TAMIL NADU</text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="496" width="1200" height="4" fill="url(#titleGrad)" opacity="0.7"/>
+</svg>

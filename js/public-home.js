@@ -217,6 +217,7 @@
             const isFull = spots <= 0;
             const passes = Array.isArray(ev.passTypes) ? ev.passTypes.slice(0, 3) : [];
             const detailUrl = `/event?slug=${encodeURIComponent(ev.slug)}`;
+            const registerUrl = `/event?slug=${encodeURIComponent(ev.slug)}&register=1`;
 
             return `
                 <article class="event-card">
@@ -240,9 +241,14 @@
                             <span class="spots-pill ${isFull ? "sold-out" : ""}">
                                 ${isFull ? "Capacity reached" : `${spots} spots left`}
                             </span>
-                            <a href="${detailUrl}" class="event-card-cta">
-                                Register Now →
-                            </a>
+                            <div class="event-card-actions">
+                                <a href="${detailUrl}" class="event-view-btn">
+                                    View Website →
+                                </a>
+                                <a href="${registerUrl}" class="event-card-cta">
+                                    Register
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </article>
