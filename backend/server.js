@@ -363,6 +363,12 @@ app.get("/events/:slug", (req, res) => {
     );
 });
 
+app.get("/bharadwaj", (req, res) => {
+    res.sendFile(
+        path.join(FRONTEND, "bharadwaj.html")
+    );
+});
+
 app.use(publicRegistrationsRouter);
 
 // ==================================================
@@ -1836,6 +1842,7 @@ app.listen(PORT, () => {
 
     console.log(`Website:   http://localhost:${PORT}`);
     console.log(`Event:     http://localhost:${PORT}/event`);
+    console.log(`Bharadwaj: http://localhost:${PORT}/bharadwaj`);
     console.log(`Homepage:  http://localhost:${PORT}/home.html`);
     console.log(`Dashboard: http://localhost:${PORT}/index.html`);
     console.log(`Create:    http://localhost:${PORT}/create-website.html`);
